@@ -1,0 +1,56 @@
+<core:FragmentDefinition 
+        xmlns="sap.m" 
+        xmlns:l="sap.ui.layout" 
+        xmlns:core="sap.ui.core"
+        xmlns:form="sap.ui.layout.form"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns:srf="srf.control" >
+
+      <!--  <Toolbar width="100%" design="Transparent" class="srfTransparent">-->
+      <!--      <ToolbarSpacer />-->
+    		<!--<Button  text="{i18n>clearEnvironment}" tooltip="{i18n>clearEnvironmentTooltip}" press="onClearEnvironment" />-->
+      <!--      <Button  text="{i18n>addEnvironmentLab}" tooltip="{i18n>addEnvironmentLabTooltip}" press="onAddLabEnvDlgOpen" type="Accept" />-->
+      <!--  </Toolbar>-->
+        
+        <Toolbar width="100%" design="Transparent" class="srfTransparent">
+            <ToolbarSpacer />
+            <Button text="{ parts: [ {path: 'mcEnv>/browsers/existing'}, 
+            						 {path: 'mcEnv>/mobiles/existing'}, 
+            						 {path: 'mcEnv>/applications/existing'}],
+							   formatter: '.formatter.addEnvironmentsBtnText'	}" 
+				    class="srfDefaultBtnColor"
+            		tooltip="{i18n>addEnvironmentTooltip}" 
+            		press="onAddNewEnvDlgOpen" />    
+            <!--<Button text="{i18n>addEnvironmentLab}" tooltip="{i18n>addEnvironmentLabTooltip}" press="onAddLabEnvDlgOpen" type="Accept" />-->
+        </Toolbar>
+        
+  <!--  	<Panel expandable="false" expanded="true" width="auto" -->
+		<!--	 id="favorites" backgroundDesign="Transparent" class="sapUiTinyMarginTop" visible="{mcEnv>/new}">-->
+  <!--      	<core:Fragment fragmentName="srf.view.fragment.environments.Favorites" type="XML" width="100%"/>-->
+		<!--</Panel>-->
+
+ 
+    	<Panel expandable="true" expanded="true" headerText="{i18n>mcDeskBrowsers} ({testDetails>/environments/length})" width="auto"  
+    		visible="{mcEnv>/browsers/existing}"
+			backgroundDesign="Transparent" class="sapUiTinyMarginTop" >
+        	<core:Fragment  fragmentName="srf.view.fragment.environments.TestEnv.DesktopBrowsers" type="XML" width="100%"/>
+		</Panel>
+		
+    	<Panel expandable="true" expanded="true" headerText="{i18n>mcMobileDevices} ({mcEnv>/mobiles/count})" width="auto"  
+    		visible="{mcEnv>/mobiles/existing}"
+			backgroundDesign="Transparent" class="sapUiTinyMarginTop" >
+    		
+			<core:Fragment fragmentName="srf.view.fragment.environments.TestEnv.MobileDevices" visible="{mcEnv>/mobiles/devices/existing}" type="XML" width="100%"/>
+   			<core:Fragment fragmentName="srf.view.fragment.environments.TestEnv.SpecificDevices" visible="{mcEnv>/mobiles/specificdevices/existing}" type="XML" width="100%"/>
+ 		</Panel>
+
+   		<Panel expandable="true" 
+   			expanded="true" 
+   			headerText="{i18n>mcApplications}  ({mcEnv>/applications/count})" 
+   			width="auto"  
+    		visible="{mcEnv>/applications/existing}"
+			backgroundDesign="Transparent" class="sapUiTinyMarginTop" >
+   			<core:Fragment fragmentName="srf.view.fragment.environments.TestEnv.Applications" visible="{environments>/environments/srf}" type="XML" width="100%"/>
+ 		</Panel>
+
+</core:FragmentDefinition>

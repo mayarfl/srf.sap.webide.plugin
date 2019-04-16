@@ -1,0 +1,603 @@
+@font-face {
+    font-family: HPSimplified;
+    src: url(fonts/hpsimplified-light-ttf.ttf);
+}
+
+/*.sapMBarChild .sapMBtnInner*/
+sapMBarChild.sapMBtn.sapMBtnBase.srfBtnColor > span,
+.sapMBarChild.sapMBtn.sapMBtnBase.srfBtnColor.srfBtnColor > span,
+div.sapMBarChild.sapMMenuBtn.sapMMenuBtnRegular.srfBtnColor > button > span  {
+	color: #0079ef !important;   
+    border-color: #0079ef  !important;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.125rem;
+}
+
+srfScroll {
+	overflow: auto;	
+}
+
+sapMBarChild.sapMBtn.sapMBtnBase.srfBtnColor > span > span.sapMBtnContent,
+.sapMBarChild.sapMBtn.sapMBtnBase.srfBtnColor.srfBtnColor > span > span.sapMBtnIcon,
+div.sapMBarChild.sapMMenuBtn.sapMMenuBtnRegular.srfBtnColor > button > span > span.sapMBtnContent {
+    color: #0079ef !important;   	
+}
+
+.srfAppGlobalTrasparent.sapUiGlobalBackgroundColor, 
+.srfAppGlobalTrasparent.sapMShellGlobalInnerBackground {
+    background-color: transparent;
+}
+
+button.srfLoginBtnColor > span {
+    background: #0079ef !important;
+    color: white !important;
+    border: 0px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+button.srfDefaultBtnColor > span > span.sapMBtnIcon,
+button.srfDefaultBtnColor > span {
+    background: #0079ef !important;
+    color: white !important;
+    border: 0px;
+}
+
+.sapMBarChild.sapMBtn.sapMBtnBase.srfBtnColor.srfBtnColor > span.sapMToggleBtnPressed > span.sapMBtnIcon{
+    color: white !important;
+    border: 0px;
+}
+
+.srfBtnImage Img {
+    margin-top: 4px;
+}
+
+.srfAdvancedTitle {
+    margin-top: 5px;
+    font-weight: bold;
+	color: #3F5161;
+}
+
+.srfBtnImage  > sapMToggleBtnPressed {
+/*    background: white !important; */
+}
+
+.srfTblHighlightCol .sapMListTblHighlightCol {
+    width: 0;
+    padding: 0;
+}
+
+.srfNoMCSelectionBusy {
+    margin-top: 200px;
+    margin-left: 300px;
+}
+
+.deviceAvailability {
+	position: absolute;
+	left: 12rem;
+	top: 2px;
+}
+
+.srfFirst {
+    background: #cccccc;
+}
+
+.srfSecond {
+    background: lightgrey;
+}
+
+.srfBrowsers .sapMImg.srfEnv {
+    margin-right: 6px;
+    margin-left: 4px;
+}
+
+.sapUiIcon.srfBrowsers {
+    margin-top: 3px;
+}
+
+.sapMImg.srfBrowsers {
+    margin-right: 6px;
+    margin-left: 4px;
+    margin-top: 3px;
+}
+
+.sapMImg.srfEnv {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.ruleOSImage.srfBrowsers.environment {
+	margin-top: 6px;
+}
+
+.srfBrowsersLItem {
+    margin-top: 0.25rem;
+    margin-right: 0px;
+    margin-bottom: 0.25rem;
+    margin-left: 0px;
+}
+
+.srfOSLItem {
+    margin-top: 0.25rem;
+    margin-right: 0px;
+    margin-bottom: 0.25rem;
+    margin-left: 0px;
+    height: 4rem;
+}
+
+.srfTransparent {
+    background: transparent;
+    border: none;
+}
+
+.srfTransparentTbFix {
+	background: white;
+    border: none;
+}
+
+.srfNotifier {
+    position: inherit;
+}
+
+.srfInputError {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.srfInputNormal {
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.sapUiMnuItmL,
+.sapUiMnuItmTxt {
+    float: none !important;
+}
+
+button.addRuleImage .sapMBtn .sapMBtnBase .sapMBtnInverted .sapUiSmallMarginBottom > img.sapMBtnCustomIcon .sapMBtnIcon .sapMBtnIconLeft .sapMImg {
+	position: absolute;
+	left: 70px;
+}
+
+div.sapMPanelBGTranslucent.sapMPanelContent.srfPanelBackground {
+    background: white;
+    border-width: 0px !important;
+}
+
+
+/* TODO: apply srfPanelBackground */
+
+section.sapMPanel.srfPanelBackground > div.sapMPanelBGTranslucent.sapMPanelContent {
+    background: white !important;
+    border-width: 0px !important;
+}
+
+.srfNoPadding,
+.srfNoPadding label {
+    padding: 0px !important;
+}
+
+.srfNoMargin {
+    margin: 0px !important;
+}
+
+.srfMargin .sapMPanelBGTransparent.sapMPanelContent.sapMPanelExpandablePart {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+section.sapMPanel.srfNoPadding > div.sapMPanelContent {
+    margin: 0px !important;
+}
+
+section.sapMPanel.srfNoMargin > div.sapMPanelContent {
+    padding: 0px !important;
+}
+
+/*.srfNoPadding .sapMListTblCell {
+    padding: 3px 3px 3px 3px !important;
+    border-width: 0px !important;
+}*/
+    
+.sapMListTblCell .srfComboMargin {
+    width: 25px;
+    position: relative;
+    left: -5px;
+}
+
+.srfComboMargin {
+    margin-top: 0.25rem;
+    margin-right: 0px;
+    margin-bottom: 0.25rem;
+    margin-left: 0px;
+}
+
+.srfWhitePanel {
+    background: white;
+}
+
+.srfNoPadding .srfParamInput {
+    padding: 0px 3px 0px 3px !important;
+}
+
+.srfTableIcon {
+    padding-top: 4px;
+    color: #808080
+}
+
+.srfParamInput input {
+    border-width: 0 0 0 0 !important;
+    border-color: black !important;
+    border-radius: 0;
+}
+
+.srfParamInput input:focus {
+    border-color: #0079ef !important;
+}
+
+.mcEnvText {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.srfNoBorder {
+    border: 0px; 
+}
+
+div.sapMInputBase.sapMTextArea.srfTransparent {
+    background: transparent;
+}
+
+div.sapMInputBase.sapMTextArea.srfNoBorder > textarea.sapMInputBaseInner.sapMTextAreaInner {
+    border: 1px solid transparent; 
+}
+
+div.sapMInputBase.sapMTextArea.srfTransparent > textarea.sapMInputBaseInner.sapMTextAreaInner{
+    background: transparent;
+}
+
+
+div.sapMInputBase.sapMTextArea.srfTextAreaHover:hover > textarea.sapMInputBaseInner.sapMTextAreaInner 
+{
+	background: transparent;
+	border: 1px solid #808080;
+	/*font-style: italic;*/
+}
+
+
+
+/* allow easy enabling of selection for read only text area - apply on immediate child textarea*/
+div.sapMInputBase.sapMInputBaseReadonly.sapMInputBaseWidthPadding.sapMTextArea.srfSelectable > textarea.sapMInputBaseInner.sapMTextAreaInner {
+    /*Chrome*/
+    -webkit-user-select: initial;
+    /*Mozilla*/
+    -moz-user-select: initial;
+    /*Opera*/
+    -o-user-select: initial;
+    /*IE*/
+    -ms-user-select: initial;
+    /*IE*/
+    user-select: initial;
+}
+
+
+.srfTestName .sapMInputBaseInner {
+    background: transparent;
+    border: 0px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+div.sapMBarChild.sapMInput.sapMInputBase.srfTestNameHover:hover > input.sapMInputBaseInner
+{
+	background: transparent;
+    border: 1px solid #808080;
+	/*font-style: italic;*/
+}
+
+div.sapMBarChild.sapMInput.sapMInputBase.srfTestName.sapMFocus.sapMInputFocused {
+	background: transparent;
+	color:transparent;	
+	font-size:1rem;
+	font-weight:normal;
+}
+
+div.sapMBarChild.sapMInput.sapMInputBase.sapMInputBaseWidthPadding.srfTestName {
+	   background: transparent;
+	   border:0px;
+	   color:transparent;
+}
+
+.srfLink {
+    color: #0079ef;
+    text-decoration: underline;
+}
+
+.srfLabel {
+    color: #0079ef;
+}
+
+.srfError {
+    color: red !important;
+}
+
+div.sapMBtnInner.sapMBtnAccept {
+    background: #0079ef;
+}
+
+.hpe-action-button {
+    border: 1px solid #0079ef;
+    background: transparent;
+    color: #0079ef;
+    border-radius: 0.125rem;
+    max-height: 2rem;
+}
+
+.hpe-action-button .sapMBtnInner,
+.hpe-action-button .sapMBtnInner:hover {
+    border-width: 0px;
+    background: transparent;
+}
+
+.rp-main-view {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    font-family: "HPSimplified";
+}
+
+.paneLayout {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+}
+
+.sapMListTbl .test40 .sapMText,
+.sapMListTbl .test40 .sapMLabel,
+.test40 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 40px;
+    margin: 0;
+}
+
+.appVersion {
+	white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.environment {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.scriptrunning {
+    /*border: 2px solid #0079ef;*/
+    /* Radius is set for all 4 sides */
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    height: 28px;
+    width: 28px;
+    /*   position: absolute;
+     left:20px;
+    top:214px;
+     */
+    /*Chrome*/
+    -webkit-animation: rotation 2s linear infinite;
+    -webkit-animation-iteration-count: infinite;
+    
+    /*Mozilla*/
+    -moz-animation: rotation 2s linear infinite;
+    -moz-animation-iteration-count: infinite;
+    /*Opera*/
+    -o-animation: rotation 2s linear infinite;
+    -o-animation-iteration-count: infinite;
+    /*IE*/
+    animation-name: rotation 2s linear infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotation {
+	from {
+			-webkit-transform: rotate(0deg);
+	}
+	to {
+			-webkit-transform: rotate(359deg);
+	}
+} 
+
+.l-1 {
+    animation-delay: .48s;
+}
+
+.l-2 {
+    animation-delay: .6s;
+}
+
+.l-3 {
+    animation-delay: .72s;
+}
+
+.l-4 {
+    animation-delay: .84s;
+}
+
+.l-5 {
+    animation-delay: .96s;
+}
+
+.l-6 {
+    animation-delay: 1.08s;
+}
+
+.l-7 {
+    animation-delay: 1.2s;
+}
+
+.l-8 {
+    animation-delay: 1.32s;
+}
+
+.l-9 {
+    animation-delay: 1.44s;
+}
+
+.l-10 {
+    animation-delay: 1.56s;
+}
+
+.load-6 .letter {
+    animation-name: loadingF;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-direction: linear;
+}
+
+.letter-holder {
+    padding: 16px;
+}
+
+.letter {
+    float: left;
+    font-size: 14px;
+    color: #777;
+}
+
+.hline {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.running {
+    color: yellow;
+}
+
+.failed {
+    color: red;
+}
+
+.none {
+    color: black;
+}
+
+.srf-test-run-status-Passed {
+    color: green;
+    background: url(../img/status/success.svg);
+    width: 16px;
+    height: 16px;
+}
+
+.srf-test-run-status-Failed {
+    background: url(../img/status/error.svg);
+    width: 16px;
+    height: 16px;
+}
+
+.srf-test-run-status-Running {
+    border: 3px solid #FE825F;
+    /* Radius is set for all 4 sides */
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    height: 15px;
+    width: 15px;
+    /*Chrome*/
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    /*Mozilla*/
+    -moz-animation: pulsate 1s ease-out;
+    -moz-animation-iteration-count: infinite;
+    /*Opera*/
+    -o-animation: pulsate 1s ease-out;
+    -o-animation-iteration-count: infinite;
+    /*IE*/
+    animation-name: pulsate;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    opacity: 0.0
+}
+
+
+/*Chrome*/
+
+@-webkit-keyframes pulsate {
+    0% {
+        -webkit-transform: scale(0.1, 0.1);
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        -webkit-transform: scale(1.2, 1.2);
+        opacity: 0.0;
+    }
+}
+
+
+/*Mozilla*/
+
+@-moz-keyframes pulsate {
+    0% {
+        -moz-transform: scale(0.1, 0.1);
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        -moz-transform: scale(1.2, 1.2);
+        opacity: 0.0;
+    }
+}
+
+
+/*Opera*/
+
+@-o-keyframes pulsate {
+    0% {
+        -o-transform: scale(0.1, 0.1);
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        -o-transform: scale(1.2, 1.2);
+        opacity: 0.0;
+    }
+}
+
+
+/*IE*/
+
+@keyframes pulsate {
+    0% {
+        -transform: scale(0.1, 0.1);
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        -transform: scale(1.2, 1.2);
+        opacity: 0.0;
+    }
+}
+
+
+.testCarousel .sapMCrslItemTableCell {
+	overflow: auto;
+}

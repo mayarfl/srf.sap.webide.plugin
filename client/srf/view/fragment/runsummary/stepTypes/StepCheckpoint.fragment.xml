@@ -1,0 +1,109 @@
+<core:FragmentDefinition 
+	xmlns="sap.ui.table" 
+	xmlns:m="sap.m" 
+	xmlns:core="sap.ui.core" >
+
+	<m:VBox visible="{testDetails>/btnShowStepProperties/pressed}" width="auto">
+				
+		<m:Text text="{i18n>checkpoint} {testDetails>origDesc}" />
+		<m:Panel expandable="true" headerText="{i18n>stepScript}"
+			visible="{path: 'testDetails>details',
+					  formatter: '.formatter.isVisible'}"
+			expanded="{path: 'testDetails>details',
+					  formatter: '.formatter.isVisible'}"
+			minWidth="220px"
+			backgroundDesign="Transparent" class="sapUiSizeCompact sapUiContentPadding" >
+	 
+			<m:TextArea value="{testDetails>details}"  
+						width="100%"
+						minWidth="220px"
+						enabled="false"
+						editable="false"
+						textAlign="Begin"
+						required="false"
+						wrapping="Soft"
+						rows="1"
+						growing="true"
+						growingMaxLines="4"
+						title="{testDetails>details}"
+						tooltip="{testDetails>details}"/>
+	
+		</m:Panel>	
+		
+		<m:Panel expandable="true" headerText="{i18n>stepError}" 
+			visible="{path: 'testDetails>error',
+							formatter: '.formatter.isVisible'}"
+			expanded="{path: 'testDetails>error',
+							formatter: '.formatter.isVisible'}"
+			backgroundDesign="Transparent" class="sapUiSizeCompact sapUiContentPadding"
+			minWidth="300px">
+	 	 
+			 <m:FlexBox width="100%">
+				<m:Image src="{ path: 'testDetails>error',
+									formatter: '.formatter.stepError'}" />
+
+				<m:TextArea value="{testDetails>error}"  
+									width="100%"
+									minWidth="300px"
+									enabled="false"
+									editable="false"
+									textAlign="Begin"
+									required="false"
+									wrapping="Soft"
+									rows="2"
+									growing="false"/>
+			</m:FlexBox>
+			
+		</m:Panel>	
+
+		<m:Panel expandable="true" headerText="{i18n>stepObjectProperties}"
+			wrapping="false"
+			visible="{testDetails>/btnShowStepProperties/pressed}"
+			expanded="true"
+			width="80%"
+			minWidth="300px"
+			backgroundDesign="Transparent" class="sapUiSizeCompact sapUiContentPadding" >
+	 
+			<Table 
+				width="55%"
+		        rows = "{testDetails>stepProperties}"
+		        class="srfNoPadding"
+		        ariaLabelledBy="title" 
+		        visibleRowCount="4"
+		        selectionMode="None"
+		        selectionBehavior="RowOnly"
+		        rememberSelections="false">
+		
+				<noData>
+					<m:Label text="{i18n>noStepProperties}"
+						design="Bold"
+						class="sapUiMediumMargin" />
+				</noData>
+				
+		       <columns>	
+					<Column hAlign="Begin" width="6rem" >
+						<m:Label text="{i18n>property}" />
+		       			<template>
+							<m:Text text="{testDetails>key}" tooltip="{testDetails>key}" wrapping="false"/>	
+						</template>	
+		       		</Column>
+					<Column hAlign="Begin" width="auto">
+						<m:Label text="{i18n>expected}" />
+		       			<template>
+							<m:Text text="{testDetails>expected}" tooltip="{testDetails>expected}" wrapping="false" />
+						</template>	
+		       		</Column>
+		       		<Column hAlign="Begin" width="auto">
+						<m:Label text="{i18n>actual}" />
+		       			<template>
+							<m:Text text="{testDetails>actual}" tooltip="{testDetails>actual}" wrapping="false" />
+						</template>	
+		       		</Column>
+				</columns>	
+			</Table>
+	
+		</m:Panel>
+	</m:VBox>
+
+
+</core:FragmentDefinition>

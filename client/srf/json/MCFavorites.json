@@ -1,0 +1,261 @@
+[{
+	"uuid": "3378ba3d-724e-471e-a4ed-f3734a7563af",
+	"name": "rte",
+	"description": null,
+	"type": "web",
+	"modifiedDate": 1481011714039,
+	"usageType": "favorite",
+	"browsers": [{
+		"os": "windows",
+		"browserVersion": "latest",
+		"osVersion": "10",
+		"browserName": "Firefox"
+	}, {
+		"os": "windows",
+		"browserVersion": "latest",
+		"osVersion": "8",
+		"browserName": "Chrome"
+	}],
+	"mobiles": [],
+	"applications": []
+}, {
+	"uuid": "bb715142-ebc7-4ab9-b9c2-2871d5d7d09e",
+	"name": "ggg",
+	"description": null,
+	"type": "web",
+	"modifiedDate": 1481011982747,
+	"usageType": "favorite",
+	"browsers": [{
+		"os": "windows",
+		"browserVersion": "latest",
+		"osVersion": "10",
+		"browserName": "Firefox"
+	}, {
+		"os": "windows",
+		"browserVersion": "latest",
+		"osVersion": "8",
+		"browserName": "Chrome"
+	}, {
+		"os": "mac",
+		"browserVersion": "latest",
+		"osVersion": "Sierra",
+		"browserName": "Chrome"
+	}],
+	"mobiles": [{
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "ASUS Nexus 7 - 2nd Gen (WiFi)"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "ASUS Memo Pad 7"
+	}],
+	"applications": []
+}, {
+	"uuid": "e97cedc3-c6e8-450e-8227-42e9b50a3d0d",
+	"name": "mob",
+	"description": null,
+	"type": "mobile",
+	"modifiedDate": 1481128130197,
+	"usageType": "favorite",
+	"browsers": [],
+	"mobiles": [{
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": ""
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "Amazon Fire (2015)"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "Amazon Kindle Fire HDX 7 (2013)"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "Blackberry Priv"
+	}],
+	"applications": [{
+		"identifier": "com.hpe.advantage",
+		"instrumented": "false",
+		"id": "d0936952-1bd1-4dab-9dc2-2569478d84ab",
+		"counter": "1"
+	}, {
+		"identifier": "com.hp.mobileweb",
+		"instrumented": "true",
+		"id": "846d71dd-e388-405e-86b6-0de3234eaa26",
+		"counter": "1"
+	}, {
+		"identifier": "com.hp.HPMobileWebBrowserINJ",
+		"instrumented": "true",
+		"id": "21b8abc0-7bfb-4665-8337-69ebeb048814",
+		"counter": "1"
+	}, {
+		"identifier": "com.sample.UICatalog",
+		"instrumented": "false",
+		"id": "9eea2d02-b284-4d1c-ae47-70b7d3a5f7f4",
+		"counter": "1"
+	}]
+}, {
+	"uuid": "f1a70ffa-9cbf-4e33-a1d0-4feb641c5070",
+	"name": "maya",
+	"description": null,
+	"type": "web",
+	"modifiedDate": 1481193456648,
+	"usageType": "favorite",
+	"browsers": [{
+		"os": "windows",
+		"osVersion": "10",
+		"browserVersion": "11",
+		"browserName": "Explorer"
+	}, {
+		"os": "windows",
+		"osVersion": "10",
+		"browserVersion": "latest",
+		"browserName": "Chrome"
+	}, {
+		"os": "windows",
+		"osVersion": "8",
+		"browserVersion": "latest",
+		"browserName": "Firefox"
+	}, {
+		"os": "windows",
+		"osVersion": "8",
+		"browserVersion": "latest",
+		"browserName": "Opera"
+	}, {
+		"os": "windows",
+		"osVersion": "8",
+		"browserVersion": "11",
+		"browserName": "Explorer"
+	}],
+	"mobiles": [],
+	"applications": []
+}, {
+	"uuid": "1cb43902-36de-417a-869d-e3c7c11abd4d",
+	"name": "maya",
+	"description": null,
+	"type": "web",
+	"modifiedDate": 1481203052869,
+	"usageType": "favorite",
+	"browsers": [{
+		"os": "windows",
+		"osVersion": "10",
+		"browserVersion": "latest",
+		"browserName": "Firefox"
+	}, {
+		"os": "windows",
+		"osVersion": "8",
+		"browserVersion": "latest",
+		"browserName": "Chrome"
+	}, {
+		"os": "mac",
+		"osVersion": "Sierra",
+		"browserVersion": "latest",
+		"browserName": "Chrome"
+	}, {
+		"os": "windows",
+		"osVersion": "10",
+		"browserVersion": "11",
+		"browserName": "Explorer"
+	}, {
+		"os": "windows",
+		"osVersion": "10",
+		"browserVersion": "latest",
+		"browserName": "Opera"
+	}, {
+		"os": "windows",
+		"osVersion": "10",
+		"browserVersion": "latest",
+		"browserName": "Firefox"
+	}, {
+		"os": "windows",
+		"osVersion": "8",
+		"browserVersion": "latest",
+		"browserName": "Opera"
+	}, {
+		"os": "windows",
+		"osVersion": "8",
+		"browserVersion": "latest",
+		"browserName": "Firefox"
+	}],
+	"mobiles": [{
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "ASUS Nexus 7 - 2nd Gen (WiFi)"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "ASUS Memo Pad 7"
+	}],
+	"applications": []
+}, {
+	"uuid": "5e8b69bb-9c64-42a1-b4e6-99835241a6af",
+	"name": "salad",
+	"description": null,
+	"type": "web",
+	"modifiedDate": 1481203261055,
+	"usageType": "favorite",
+	"browsers": [{
+		"os": "windows",
+		"osVersion": "10",
+		"browserVersion": "11",
+		"browserName": "Explorer"
+	}, {
+		"os": "windows",
+		"osVersion": "8",
+		"browserVersion": "latest",
+		"browserName": "Chrome"
+	}, {
+		"os": "mac",
+		"osVersion": "Sierra",
+		"browserVersion": "latest",
+		"browserName": "Chrome"
+	}, {
+		"os": "mac",
+		"osVersion": "Sierra",
+		"browserVersion": "latest",
+		"browserName": "Opera"
+	}],
+	"mobiles": [{
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "Elephone P7000"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "HTC Desire 526G+"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "HTC One M7 (AT&T)"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "IOS",
+		"deviceName": "Apple iPhone 5c"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "IOS",
+		"deviceName": "Apple iPhone 6"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "IOS",
+		"deviceName": "Apple iPhone SE"
+	}],
+	"applications": []
+}]

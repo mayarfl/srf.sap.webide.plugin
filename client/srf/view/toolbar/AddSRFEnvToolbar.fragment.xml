@@ -1,0 +1,14 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form">
+	
+	<Toolbar design="Transparent" class="sapUiSmallMarginTopBottom srfTransparent sapUiSizeCompact">
+	
+		<Title text="{  path: 'testDetails>/runEnvironmentsSelection', 
+						formatter: '.formatter.environmentSelectionTitle' } | { path: 'testDetails>/platform', 
+																				formatter: '.formatter.testPlatformName' }"  />
+	
+	</Toolbar>
+	
+</core:FragmentDefinition>

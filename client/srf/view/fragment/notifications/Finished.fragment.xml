@@ -1,0 +1,67 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<List class="sapContrast sapContrastPlus" >
+		<NotificationListGroup
+			title="{i18n>today}"
+			showCloseButton="false"
+			items="{ path: 'finishedTests>/today' }"
+			>
+			<items>
+				<NotificationListItem
+					title="{finishedTests>name}"
+					description="{finishedTests>yac} | {finishedTests>user/name}"
+					unread="true"
+					priority="{	path: 'finishedTests>status',
+								formatter: '.formatter.finishedTestStatus'    }"
+					showCloseButton="false"
+					press="onListItemPress"
+					>
+				</NotificationListItem>
+			</items>
+		</NotificationListGroup>
+		<NotificationListGroup
+			title="{i18n>yesterday}"
+			items="{ path: 'finishedTests>/yesterday' }"
+			showCloseButton="false"
+			collapsed="true"
+			>
+			<items>
+				<NotificationListItem
+					title="{finishedTests>name} | {finishedTests>user/name}"
+					description="{finishedTests>yac} | {finishedTests>user/name}"
+					showCloseButton="false"
+					unread="true"
+					priority="{	path: 'finishedTests>status',
+								formatter: '.formatter.finishedTestStatus'    }"
+					press="onListItemPress"
+					>
+				</NotificationListItem>
+			</items>
+		</NotificationListGroup>
+		<NotificationListGroup
+			title="{i18n>older}"
+			showCloseButton="false"			
+			items="{ path: 'finishedTests>/older' }"
+			collapsed="true"
+			>
+			<items>
+				<NotificationListItem
+					title="{finishedTests>name} | {finishedTests>user/name}"
+					description="{finishedTests>yac} | {finishedTests>user/name}"
+					showCloseButton="false"
+					unread="true"
+					priority="{	path: 'finishedTests>status',
+								formatter: '.formatter.finishedTestStatus'    }"
+					press="onListItemPress"
+					>
+				</NotificationListItem>
+			</items>
+		</NotificationListGroup>
+	</List>
+	
+</core:FragmentDefinition>

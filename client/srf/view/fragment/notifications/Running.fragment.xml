@@ -1,0 +1,47 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<List class="sapContrast sapContrastPlus" >
+		<NotificationListGroup
+			title="{i18n>RunningTests}"
+			items="{ path: 'runningTests>/aData' }"
+			showCloseButton="false"
+			>
+			<items>
+				<NotificationListItem
+					title="{runningTests>name}"
+					description="{runningTests>yac} | {runningTests>user/name} | {path: 'runningTests>durationMs',
+								type: 'new sap.ui.model.type.Float(
+									    	{	minFractionDigits:0,
+	                        					maxFractionDigits:3})',
+								formatter: '.formatter.duration'}"
+					
+					unread="true"
+					priority="Low"
+					close="onItemClose"
+					press="onListItemPress"	
+					showCloseButton="false"
+					>
+					<buttons>
+						<Button text="{i18n>StopTest}" type="Accept" press="onStopTest"></Button>
+						
+						<!--<Button src="{ path: 'ti18n>StopTest',-->
+						<!--	 formatter: '.formatter.stepStatus'}" type="Accept" press="onStopTest"></Button>-->
+						<!--<Button text="Reject" type="Reject" press="onRejectPress"></Button>-->
+					</buttons>
+				</NotificationListItem>
+			</items>
+		</NotificationListGroup>
+	</List>
+	<!--
+			datetime="1 hour"
+			showCloseButton="true"
+			authorName="Michael Muller"
+			authorPicture="sap-icon://person-placeholder"
+			close="onItemClose"
+	-->
+</core:FragmentDefinition>

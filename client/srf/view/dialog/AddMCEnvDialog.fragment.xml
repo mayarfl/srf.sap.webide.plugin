@@ -1,0 +1,148 @@
+<core:FragmentDefinition
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:srf="srf.control">
+
+	<Dialog 
+		 title="{i18n>environmentSelection}" 
+		 class="sapUiPopupWithPadding sapUiSizeCompact" 
+		 type="Message"
+		 draggable="true" contentWidth="100rem"
+		 >
+		
+		<core:Fragment fragmentName="srf.view.toolbar.AddMCEnvToolbar" type="XML"/>
+		<HBox>
+			<!-- OS/Device/Applications selection -->
+			<VBox>
+				<Text text= "{i18n>headerDesktop}" class="mcEnvText" />
+				<List  width="140px" >	
+					<items>
+						<ObjectListItem title="{i18n>typeWindows}" type="Active" selected="true" press="onWindowsClick" />
+						<ObjectListItem title="{i18n>typeMAC}" type="Active" press="onMACClick" />
+						<ObjectListItem title="{i18n>typeLinux}" type="Active" press="onLinuxClick" />
+					</items>
+				</List>
+				<Text text= "{i18n>headerMobileDevices}" class="mcEnvText" />
+				<List id="mobileOS">
+					<items>
+						<ObjectListItem title="{i18n>typeAndroid}" type="Active" press="onAndroidClick" />
+						<ObjectListItem title="{i18n>typeiOS}" type="Active" press="oniOSClick" />
+						<ObjectListItem title="{i18n>typeWindowsPhone}" type="Active" press="onWindowsPhoneClick" />						
+					</items>
+				</List>
+			</VBox>
+			
+			<!-- winBrowsersPanel -->
+			<FlexBox items="{ path: 'mcEnvironments>/environments' }" id="winBrowsersPanel" class="srfSecond">
+				<items>
+					<Panel expandable="true" expanded="true" 
+						headerText="{mcEnvironments>name} {mcEnvironments>version}" 
+						backgroundDesign="Transparent" class="srfNoPadding srfNoMargin"
+						width="16rem">
+
+						<List items="{ path: 'mcEnvironments>browsers' }" width="13rem">
+							<items>
+								<CustomListItem class="srfBrowsersLItem">
+									<srf:Browser name="{mcEnvironments>name}" class="srfBrowsers environment" 
+											press="onBrowserSelected"/>
+								</CustomListItem>
+							</items>
+						</List>
+						
+					</Panel>
+				</items>
+			</FlexBox>
+			
+			<!-- mobilesPanel -->
+			<VBox id="mobilesPanel" visible="false" class="srfSecond">
+				<items>
+					
+					<Panel expandable="true" expanded="true" 
+						headerText="{i18n>rules}" 
+						backgroundDesign="Transparent" class="srfNoPadding srfNoMargin"
+						width="16rem">
+
+						<Button type="Accept"
+							text="{i18n>btnAddAndroidDeviceBegin} {mcEnvironments>/selectedOS} {i18n>btnAddAndroidDeviceEnd}"
+							press="onAddDevice" class="sapUiSmallMarginBottom"	width="13rem"/>
+							
+						<Input placeholder="{i18n>inputSearchSpecificDevice}" width="13rem"/>
+						<List items="{ path: 'mcEnvironments>devices' }" id="ruleDevices" width="13rem" >
+							<items hAlign="Center">
+								<CustomListItem class="srfBrowsersLItem"
+									press="onRuleDeviceSelectionChange" type="Active">
+									<VBox alignContent="Center">
+										<Text text="{mcEnvironments>logicName}" />
+										<HBox> 
+											<srf:OS image="{mcEnvironments>platformName}" width="30px" />
+											<Text text="{mcEnvironments>platformVersion}" />
+										</HBox>
+									</VBox>
+								</CustomListItem>
+							</items>
+						</List>
+				
+					</Panel>
+					<Panel expandable="true" expanded="false" 
+						headerText="{i18n>specificDevices}" 
+						backgroundDesign="Transparent" class="srfNoPadding srfNoMargin"
+						width="16rem">
+
+						<Input placeholder="{i18n>inputSearchDevice}" width="13rem"/>
+						
+						<List items="{ path: 'mcEnvironments>devices' }" id="specDevices" width="13rem">
+							<items hAlign="Center">
+								<CustomListItem class="srfBrowsersLItem"
+									 press="onSpecificDeviceSelectionChange" type="Active">
+									<VBox>
+										<Text text="{mcEnvironments>logicName}" />
+										<HBox> 
+											<srf:OS image="{mcEnvironments>platformName}" width="30px" />
+											<Text text="{mcEnvironments>platformVersion}" />
+										</HBox>
+									</VBox>
+								</CustomListItem>
+							</items>
+						</List>
+					</Panel>
+				</items>
+			</VBox>
+			
+			<HBox  id="selectedItemsHBox" visible="{mcEnvironments>/hasSelection}">
+				<VBox>
+					<Panel class="srfNoPadding" 
+							backgroundDesign="Transparent" expandable="true" 
+							expanded="true" 
+							headerText="{i18n>selectedBrowsers} ({mcEnvironments>/selectedbrowsers/count})" >
+					   	<core:Fragment fragmentName="srf.view.fragment.environments.SelectedDesktopBrowsers" type="XML" />
+					</Panel>			
+					<Panel class="srfNoPadding" 
+							backgroundDesign="Transparent" expandable="true" 
+							expanded="true" 
+							headerText="{i18n>selectedDevices} ({mcEnvironments>/selecteddevices/count})" >
+						
+						<Text text="{i18n>rules}" />
+						<core:Fragment fragmentName="srf.view.fragment.environments.SelectedMobileDevices" type="XML" />
+					   	<Text text="{i18n>specificDevices}" />
+					   	<core:Fragment fragmentName="srf.view.fragment.environments.SelectedSpecificMobileDevices" type="XML" />
+					</Panel>				
+				</VBox>
+			</HBox>
+			<HBox id="noSelectionHBox" visible="{mcEnvironments>/noSelection}">
+				<Label text="{i18n>noMCSelection}" />
+			</HBox>
+		</HBox>
+		
+
+
+		<beginButton>
+			<Button text="OK" press="onSaveLabEnv" />
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancelButton}" press="onAddEnvLabDlgCancel" />
+		</endButton>
+		
+	</Dialog>
+
+</core:FragmentDefinition>

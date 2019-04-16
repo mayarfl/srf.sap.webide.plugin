@@ -1,0 +1,17 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="srf.controller.TestsView">
+	<Page title="{i18n>testTableTitle}"  class="sapUiSizeCompact" >
+		<headerContent>
+			<core:Fragment fragmentName="srf.view.fragment.PageHeader" type="XML"/>
+		</headerContent>
+		<content>
+			<Panel visible="{srf>/srf_loggedIn}" backgroundDesign="Transparent" class="srfNoPadding srfNoMargin">
+				<core:Fragment fragmentName="srf.view.toolbar.TestsViewToolbar" type="XML"/>
+				<core:Fragment fragmentName="srf.view.fragment.TestsList" type="XML"/>
+			</Panel>
+			<Panel visible="{ path: 'srf>/srf_loggedIn', formatter: '.formatter.isNotLoggedin' }" 
+				backgroundDesign="Transparent" class="srfNoPadding srfNoMargin">
+				<core:Fragment fragmentName="srf.view.fragment.Login" type="XML"/>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

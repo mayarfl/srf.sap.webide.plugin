@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" 
+	xmlns:core="sap.ui.core" xmlns:c="sap.ui.commons" 
+	xmlns:f="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<Panel id="generalDetailsPanel" expandable="true" expanded="true" headerText="{i18n>newTest_TestDetails}" width="auto" 
+		backgroundDesign="Transparent" class="sapUiTinyMarginTop srfNoPadding sapUiSizeCompact" >
+
+		<!--l:HorizontalLayout  width="100%" -->
+			
+			<l:VerticalLayout width="100%">
+	
+				<Label text="{i18n>testDescriptionLabel}" />
+				<TextArea value="{testDetails>/desc}" tooltip="{i18n>newTest_TestDescriptionTooltip}" 
+						placeholder="{i18n>testDecriptionPlaceholder}"
+						width="100%"
+						rows="3"
+						wrapping="Soft"
+						class="srfNoBorder srfTransparent srfTextAreaHover"
+						change="onDescChange" />
+				<Label text="" />
+				<MultiInput id="multiInput"
+					width="100%"
+					enableMultiLineMode="true"
+					tokens="{testDetails>/tags}"
+					tokenUpdate="onSaveTags"
+					class="srfTransparent"
+					placeholder="{i18n>testDetailsTagsPlaceholder}"
+					suggestionItems="{
+										path: 'testDetails>/allTags',
+										sorter: { path: 'testDetails>name' }
+									}"
+					>
+			
+	                <tokens>
+	                	<Token text="{testDetails>name}" key="{testDetails>id}" />
+	                </tokens>
+	                <core:Item key="{testDetails>id}" text="{testDetails>name}" />
+				</MultiInput>
+				<Label/>
+			</l:VerticalLayout>
+		<!--/l:HorizontalLayout-->
+	</Panel>				
+
+</core:FragmentDefinition>

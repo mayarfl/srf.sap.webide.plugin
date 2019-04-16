@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m"
+xmlns:core="sap.ui.core"  
+xmlns:html="http://www.w3.org/1999/xhtml" 
+xmlns:srf="srf.control">
+	
+	<Label text="{i18n>selectExecutableFileNameLabel}" />
+	<Label  width="0.5rem" />
+	<ComboBox tooltip="{i18n>newTest_SelectExecutableTooltip}" id="fileList"
+		showSecondaryValues= "true"
+		items="{ path: 'testDetails>/executableFiles',
+			sorter: { path: 'sFileName' } }" 
+		change="onExecutableFileChanged"  placeholder="{i18n>useBlankPage}">
+		<core:ListItem key="{testDetails>sFileName}" text="{testDetails>sFileName}" 
+			additionalText = "{testDetails>sFilePath}"/>
+	</ComboBox>
+</core:FragmentDefinition>

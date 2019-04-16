@@ -1,0 +1,78 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" 
+		xmlns:core="sap.ui.core" >
+	
+	<Dialog id="paramEditor" title="{i18n>ScriptParametersTitle} {= ${testDetails>name}}" 
+		class="sapUiPopupWithPadding sapUiSizeCompact" width="auto" resizable="true" contentHeight="20rem" draggable="true">
+		<beginButton>
+			<Button text="{i18n>save}" class="srfDefaultBtnColor" tooltip="{i18n>saveButtonTooltip}" press="onSaveParameters"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancelButton}" class="srfBtnColor" tooltip="{i18n>cancelButtonTooltip}" press="onCancelParameters"/>
+		</endButton>
+		<content>
+		<l:VerticalLayout class="srfNoPadding">
+			<Table id="paramGrid" class="sapUiSizeCompact" items="{testDetails>parameters}" width="100%" height="12rem">
+				<columns>
+					<Column hAlign="Begin" width="1rem"></Column>
+					<Column hAlign="Begin" width="9rem"><Text text="{i18n>comumnName}"/></Column>
+					<Column hAlign="Begin" width="50%"><Text text="{i18n>comumnDefaultValue}"/></Column>
+					<Column hAlign="Begin" width="50%"><Text text="{i18n>columnValue}"/></Column>
+				</columns>
+				
+	           <items>
+	           		<ColumnListItem>
+	           			<cells>
+	           				<core:Icon src="sap-icon://decline" press="onRemoveParameter" class="srfTableIcon"/>	
+	           				<Text text="{testDetails>name}" tooltip="{testDetails>name}" />	
+	           				<Input value="{testDetails>defaultValue}" type="Text" class="sapUiNoContentPadding srfParamInput" tooltip="{testDetails>defaultValue}" />	
+	           				<Input value="{testDetails>value}" type="Text" class="sapUiNoContentPadding srfParamInput" tooltip="{testDetails>value}"  />	
+						</cells>
+	           		</ColumnListItem>
+	           </items>
+			</Table>
+			
+			<Toolbar design="Transparent" class="srfNoPadding srfTransparent">
+				<Input id="newParamName" hAlign="Begin" placeholder="{i18n>parameterNamePlaceholder}"  tooltip="{i18n>parameterNamePlaceholder}"  width="50%" 
+					  class="sapUiNoContentPadding srfParamInput" liveChange="onNewParamNameChanged"/>
+			
+				<Input id="newParamValue" placeholder="{i18n>parameterDefaultValuePlaceholder}"  tooltip="{i18n>parameterDefaultValueTooltip}"  width="50%" 
+					 class="sapUiNoContentPadding srfParamInput" />
+				<Select id="executableFileSelect" width="2.6rem" class="sapUiNoContentPadding" tooltip="{i18n>parameterSelectExecutableFileTooltip}" 
+					forceSelection="false"
+					selectedKey="{testDetails>/sFileName}"
+					type="IconOnly"
+					icon="sap-icon://drop-down-list"
+					showSecondaryValues= "true"
+					items="{
+						path: 'testDetails>/executableFiles',
+						sorter: { path: 'sFileName' }
+					}" 
+					placeholder="{i18n>parameterSelectExecutableFilePlaceholder}">
+					<core:ListItem key="{testDetails>sFileName}" text="{testDetails>sFileName}" 
+						additionalText = "{testDetails>sFilePath}"/>
+				</Select>
+				<Button id="addParam"  text="{i18n>addButtonLabel}" 
+					class="sapUiNoContentPadding" press="onAddParameter" enabled="false"/>
+		
+			</Toolbar>
+			<!--<Label width="0.5rem"/>-->
+			<!--<FlexBox  width="100%" class="srfNoPadding"	alignItems="Start">-->
+			<!--	<items>-->
+			<!--		<Label width="1rem"/>-->
+			<!--		<Input id="newParamName" hAlign="Begin" placeholder="New parameter name" width="14rem"  class="sapUiNoContentPadding srfParamInput" liveChange="onNewParamNameChanged"/>-->
+				
+			<!--		<Input id="newParamValue" placeholder="New parameter default value" width="14rem" class="sapUiNoContentPadding srfParamInput">-->
+			<!--			<layoutData><FlexItemData growFactor="3" /></layoutData>-->
+			<!--		</Input>-->
+			<!--		<Label width="auto"/>-->
+			<!--		<Button id="addParam"  text="ADD" -->
+			<!--			class="sapUiNoContentPadding hpe-action-button" height="2rem" press="onAddParameter" enabled="false"/>-->
+			<!--		<Label width="0.1rem"/>-->
+			<!--	</items>-->
+			<!--</FlexBox>-->
+			<Label height="0.7rem" text="{testDetails>/parametersError}" class="sapUiNoContentPadding srfError" />
+		
+		</l:VerticalLayout>
+	</content>
+	</Dialog>
+</core:FragmentDefinition>

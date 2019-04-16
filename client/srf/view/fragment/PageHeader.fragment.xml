@@ -1,0 +1,29 @@
+<core:FragmentDefinition 
+        xmlns="sap.m" 
+        xmlns:core="sap.ui.core" 
+        xmlns:form="sap.ui.layout.form"
+        >
+
+	<!--<Label text="{i18n>pageHeaderloginLabel}" class="sapUiNoContentPadding srfError" 
+	design="Bold" visible="{ path: 'srf>/srf_loggedIn', formatter: '.formatter.isNotLoggedin' }"/>-->
+
+	<Select tooltip="{i18n>workspaceTooltip}" 
+			items="{ path: 'srf>/srf_workspaces' }" 
+			selectedKey="{srf>/srf_lastSelectedWorkspaceId}"
+			change="onWorkspaceChanged"
+			visible="{srf>/srf_loggedIn}"
+			width="180px">
+				<core:Item key="{srf>id}" text="{srf>name}"/>
+	</Select>
+	<Button text="{runningTests>/total}" press="onRunningsPressed" tooltip="{i18n>runningTestsTooltip}" 
+			enabled="{srf>/srf_loggedIn}" visible="{srf>/srf_loggedIn}">
+	</Button>	
+    <Image src= "{ path: 'srf>/srf_loggedIn', formatter: '.formatter.getMainPluginImage' }" 
+    		alt="{i18n>pageHeaderPluginImageLabel}"
+			width="2rem" 
+			press="onPluginImagePressed"
+			tooltip="{i18n>testTableTitle}&#10;{srf>/srf_destination}"
+			visible="{srf>/srf_loggedIn}"/>
+			
+<!-- tooltip="{i18n>testTableTitle}&#10;{srf>/srf_destination}&#10;{srf>/srf_username}" -->
+</core:FragmentDefinition>

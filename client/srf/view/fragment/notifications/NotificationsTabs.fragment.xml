@@ -1,0 +1,23 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+
+	<IconTabBar
+		class="sapUiNoContentPadding srfTransparent" expandable="false">
+		<items class="srfTransparent">
+			<IconTabFilter  class="srfTransparent"
+				text="{i18n>RunningTests}">
+				 <core:Fragment fragmentName="srf.view.fragment.notifications.Running" type="XML"/>
+			</IconTabFilter>
+			<IconTabFilter  class="srfTransparent"
+				text="{i18n>FinishedTests}">
+				 <core:Fragment fragmentName="srf.view.fragment.notifications.Finished" type="XML"/>
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+		
+</core:FragmentDefinition>

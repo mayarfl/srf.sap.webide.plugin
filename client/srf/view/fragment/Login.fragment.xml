@@ -1,0 +1,74 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:srf="srf.control">
+	<l:VerticalLayout class="sapUiNoContentPadding sapUiSizeCompact srfTransparent" width="100%" height="100%">
+		<l:content>
+			<VBox class="srfTransparent sapUiSizeCompact" fitContainer="true">
+				<Label />
+				<FlexBox 
+					fitContainer="true"
+					alignItems="Start"
+					justifyContent="Center">
+					<items>
+					<Label text="{i18n>loginLabel}"/>
+					<Label width="1rem"></Label>
+					<Label text="{srf>/srf_destination}"  design="Bold"/>
+					</items>
+				</FlexBox>
+				<FlexBox 
+					fitContainer="true"
+					alignItems="Start"
+					justifyContent="Center">
+					<items>
+					<Label text="{srf>/srf_loginFailed}" class="sapUiNoContentPadding srfError"/>
+					</items>
+				</FlexBox>
+				<FlexBox 
+					fitContainer="true"
+					alignItems="Start"
+					justifyContent="Center">
+					<items>
+					<Label text="{i18n>settings_UserNameTooltip}" class="sapUiSmallMarginBegin" width="7rem" labelFor="srfPaneUsernameId"/>
+					<Input id="srfPaneUsernameId" required="true" tooltip="{i18n>settings_UserNameTooltip}" placeholder="{i18n>settings_UserNamePlaceholder}"
+						maxLength="100" width="13rem" value="{srf>/user/name}"
+						liveChange="onPaneUserNameChanged"
+						submit="onPaneLogin"></Input>
+					</items>
+				</FlexBox>
+				<Label />
+				<FlexBox 
+					fitContainer="true"
+					alignItems="Start"
+					justifyContent="Center">
+					<items>
+					<Label text="{i18n>settings_PasswordTooltip}" class="sapUiSmallMarginBegin" width="7rem" labelFor="srfPanePasswordId"/>
+					<Input id="srfPanePasswordId" type="Password" required="true" tooltip="{i18n>settings_PasswordTooltip}" placeholder="{i18n>settings_PasswordPlaceholder}"
+						maxLength="100" width="13rem" value="{srf>/user/password}"
+						liveChange="onPanePasswordChanged"
+						submit="onPaneLogin"></Input>
+					</items>
+				</FlexBox>
+				<Label />
+				<Toolbar design="Transparent" class="sapUiSmallMarginTopBottom srfTransparent sapUiSizeCompact">
+					<ToolbarSpacer/>
+				</Toolbar>
+				<FlexBox 
+					fitContainer="true"
+					height="10rem"
+					alignItems="Start"
+					justifyContent="Center">
+					<items>
+						<Button text="{i18n>loginButton}" press="onPaneLogin" width="10rem" class="srfLoginBtnColor"/>
+					</items>
+				</FlexBox>
+
+				<FlexBox 
+					alignItems="Start"
+					justifyContent="Center">
+					<items>
+						<Image src="{ path: 'settings.png', formatter: '.formatter.getSettingsImage' }"/>
+					</items>
+				</FlexBox>
+
+			</VBox>
+		</l:content>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

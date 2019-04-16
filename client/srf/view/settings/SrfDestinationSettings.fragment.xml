@@ -1,0 +1,19 @@
+<core:FragmentDefinition 
+xmlns="sap.m" 
+xmlns:core="sap.ui.core" 
+xmlns:html="http://www.w3.org/1999/xhtml" 
+xmlns:srf="srf.control">
+
+	<HBox>
+		<Label text="{i18n>settings_SelectDestinationLabel}" class="srfComboMargin"></Label>
+		<Label  width="10px" />
+		<Select tooltip="{i18n>settings_SelectDestinationTooltip}" 
+			selectedKey="{srfSettings>/_sSrfDestinationName}"
+			change="onDestinationChanged"
+			items="{ path: 'srfSettings>/_aSrfDestinations', sorter: { path : 'srfSettings>destination' } }" 
+		>
+			<core:ListItem key="{srfSettings>destination}" text="{srfSettings>destination}"/>
+		</Select>
+	</HBox>
+	
+</core:FragmentDefinition>

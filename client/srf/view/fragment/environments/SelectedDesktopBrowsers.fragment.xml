@@ -1,0 +1,61 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:srf="srf.control"
+	xmlns:commons="sap.ui.commons" >
+
+	<!--<Text text= "{i18n>selectedBrowsers} ({mcEnvironments>/selectedbrowsers/count})" class="mcEnvText" />-->
+	<Table mode="None" id="selectedbrowsers" rememberSelections="false"
+		items="{mcEnvironments>/selectedbrowsers}"
+		insert="false" 
+		width="auto" growing="true" 
+		growingThreshold="15" growingScrollToLoad="true" 
+		selectionChange="onSelectionChangeHandler"
+		updateFinished="onUpdateFinished"  class="sapUiSizeCompact sapUiSizeCompact srfNoPadding">
+
+		<!--<headerToolbar>-->
+		<!--	<Toolbar>-->
+		<!--		<Title id="tableHeader" text="{testsView>/testsTableTitle}"/>-->
+		<!--		<ToolbarSpacer/>-->
+		<!--		<SearchField id="searchField" tooltip="{i18n>testSearchTooltip}"  showRefreshButton="true" showSearchButton="true"-->
+		<!--			liveChange="onLiveSearch" search="onSearch" width="auto"></SearchField>-->
+		<!--	</Toolbar>-->
+		<!--</headerToolbar>-->
+		
+		<columns>
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>OS}" tooltip="{i18n>OS}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>Browser}" tooltip="{i18n>Browser}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>Version}" tooltip="{i18n>Version}" wrapping="false"/>
+			</Column>
+			<Column hAlign="End" wrapping="false" width="2rem" >
+				
+			</Column>
+		</columns>
+	
+		<items>
+			<ColumnListItem >
+				<cells>
+					<srf:OS os="{mcEnvironments>os}"/>
+					<Text text="{mcEnvironments>browser/name}"/>
+					<commons:DropdownBox items="{ path: 'mcEnvironments>browser/versions', 
+										sorter: { path : 'mcEnvironments>version', descending: true } }"
+							  selectionChange="onBrowserVersionChanged"
+							  selectedKey="{mcEnvironments>browser/version}" >
+						<commons:items>
+							<core:ListItem key="{mcEnvironments>version}" text="{mcEnvironments>version}"/>
+						</commons:items>
+					</commons:DropdownBox>
+					<core:Icon src="sap-icon://delete" press="onDeleteSelectedBrowser"></core:Icon>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+
+</core:FragmentDefinition>

@@ -1,0 +1,22 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	>
+	
+	
+	<OverflowToolbar width="100%" design="Transparent" class="sapUiSmallMarginTopBottom srfTransparent sapUiSizeCompact"  enabled="{srf>/srf_loggedIn}">
+		<content>
+			<ToolbarSpacer/>
+			<Link text="{i18n>MoreRuns}" press="onPreviousRunsDlgOpen" class="srfLink" enabled="{	
+									path: 'testDetails>/testruns',
+									formatter: '.formatter.availableTestRuns' }"/>
+		<Button icon="sap-icon://watt/tmpl_defect"
+			press="onSubmitDefect"
+			class="srfBtnImage srfBtnColor"
+			tooltip="{i18n>submitDefectTooltip}"/>
+		</content>
+	</OverflowToolbar>
+    
+	
+</core:FragmentDefinition>

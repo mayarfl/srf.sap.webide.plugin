@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="sap.ui.commons" xmlns:l="sap.ui.layout" resizable="false">
+	<Dialog title="{i18n>testTableTitle}" tooltip="{i18n>addScriptToTest}&#10;'{testDetails>/newTestName}'" class="sapUiPopupWithPadding sapUiSizeCompact"
+		draggable="true" resizable="false" contentHeight="50rem">
+		<subHeader>
+			<OverflowToolbar design="Transparent" class="sapUiTinyMarginBottom srfTransparentTbFix sapUiSizeCompact" height="3rem">
+				<Title text="{i18n>addScript} ({testDetails>/_assets/selectedItemsCount}/{testDetails>/_assets/totalItemsCount})"/>
+				<ToolbarSpacer/>
+				<c:Paginator currentPage="{testDetails>/_assets/pageNumber}" numberOfPages="{testDetails>/_assets/totalPages}" page="onAssetsPageSelected"
+					class="sapUiForceWidthAuto"/>
+				<ToolbarSpacer/>
+				<SearchField value="{testDetails>/_assets/searchAssetByName}" tooltip="{i18n>scriptSearchTooltip}" placeholder="{i18n>scriptSearchPlaceholder}" showRefreshButton="true"
+					showSearchButton="true" liveChange="onScriptsLiveSearch" search="onScriptsSearch" width="auto"></SearchField>
+			</OverflowToolbar>
+		</subHeader>
+		<content>
+			<Table class="sapUiSizeCompact srfTblHighlightCol" title="{i18n>testTableTitle}" mode="MultiSelect" rememberSelections="false" 
+					selectionChange="onScriptSelectionChanged"
+					id="addScriptsList"
+					width="50rem"
+					items="{ path: 'testDetails>/_assets/assets' }" includeItemInSelection="true" >
+					<!--growing="true"	growingThreshold="{testDetails>/_assets/growingThreshold}" growingScrollToLoad="true"-->
+				<!--<headerToolbar>-->
+				<!--	<Toolbar height="1rem" class="sapUiTinyMarginBeginEnd">-->
+				<!--		<ToolbarSpacer/>-->
+				<!--		<Label id="srfTotalScripts" text="" class="sapUiTinyMargin" design="Bold"></Label>-->
+				<!--		<ToolbarSpacer/>-->
+				<!--	</Toolbar>-->
+				<!--</headerToolbar>-->
+					
+				<columns>
+					<Column hAlign="Begin" width="2rem"/>
+					<Column hAlign="Begin" width="auto"/>
+					<Column hAlign="End" width="14rem"/>
+				</columns>
+				<items>
+					<ColumnListItem selected="{testDetails>selected}">
+						<cells>
+							<Image src="{ path: 'testDetails>sdk', formatter: '.formatter.testType' }" width="1.5rem" alt="{testDetails>sdk}"
+								tooltip="{testDetails>sdk}"/>
+							<Text text="{testDetails>name}"/>
+							<Text text="{testDetails>author/name} | { path: 'testDetails>creationDate', formatter: '.formatter.timestampToDate'}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<beginButton>
+			<Button text="{i18n>addButton}" tooltip="{i18n>addButtonTooltip}" class="srfDefaultBtnColor" press="onAddScriptsDlgSave"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>closeButton}" tooltip="{i18n>closeButtonTooltip}" class="srfBtnColor" press="onAddScriptsDlgCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

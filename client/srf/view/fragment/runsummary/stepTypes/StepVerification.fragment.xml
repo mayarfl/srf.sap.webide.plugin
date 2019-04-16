@@ -1,0 +1,106 @@
+<core:FragmentDefinition 
+	xmlns="sap.ui.table" 
+	xmlns:m="sap.m" 
+	xmlns:core="sap.ui.core" >
+	
+	<m:VBox visible="{testDetails>/btnShowStepProperties/pressed}" width="auto">
+		
+		<m:Panel headerText="{i18n>stepDescription}"
+			expanded="true"
+			backgroundDesign="Transparent" class="sapUiSizeCompact sapUiContentPadding" >
+	 
+			<m:TextArea value="{testDetails>name}"  
+						width="100%"
+						enabled="false"
+						editable="false"
+						textAlign="Begin"
+						required="false"
+						wrapping="Soft"
+						rows="1"
+						growing="true"
+						growingMaxLines="4"
+						title="{testDetails>name}"
+						tooltip="{testDetails>name}"/>
+	
+		</m:Panel>	
+		
+		<m:Panel expandable="true" headerText="{i18n>stepError}"
+			visible="{path: 'testDetails>error',
+							formatter: '.formatter.isVisible'}"
+			expanded="{path: 'testDetails>error',
+							formatter: '.formatter.isVisible'}"
+			backgroundDesign="Transparent" class="sapUiSizeCompact sapUiContentPadding" width="auto" >
+	 
+			<m:FlexBox>
+				<m:Image src="{ path: 'testDetails>error',
+									formatter: '.formatter.stepError'}" />
+								 	   
+				<m:TextArea value="{testDetails>error}"  
+									width="100%"
+									enabled="false"
+									editable="false"
+									textAlign="Begin"
+									required="false"
+									wrapping="Soft"
+									rows="2"
+									growing="false"/>
+			</m:FlexBox>
+		</m:Panel>	
+
+		<m:Panel expandable="true" headerText="{i18n>stepObjectProperties}"
+			visible="{testDetails>/btnShowStepProperties/pressed}"
+			expanded="true"
+			backgroundDesign="Transparent" width="100%" class="sapUiSizeCompact sapUiContentPadding">
+			
+			<m:VBox>
+				<m:FlexBox>
+					<m:Text text="{i18n>operation}" class="sapUiSmallMarginEnd"/>
+					<m:Text text="{testDetails>verification/operation}" class="sapUiSmallMarginBegin"/>
+				</m:FlexBox>	
+				<m:Text text="" />
+				<m:FlexBox  visible="{ path: 'testDetails>verification/parameters',
+									formatter: '.formatter.stepVerificationDataVisible'}">
+					<m:Text text="{i18n>data}" class="sapUiSmallMarginEnd" />
+				
+					<Table 
+						width="300px"
+				        rows = "{testDetails>verification/values}"
+				        class="srfNoPadding"
+				        ariaLabelledBy="title" 
+				        visibleRowCount="3"
+				        selectionMode="None"
+				        columnHeaderVisible="false"
+				        selectionBehavior="RowOnly" >
+				
+						<noData>
+							<m:Label text="{i18n>noStepProperties}"
+								design="Bold"
+								class="sapUiMediumMargin" />
+						</noData>
+						
+				       <columns>	
+							<Column hAlign="Begin" width="auto" >
+								<m:Label text="{i18n>stepParameter}" />
+				       			<template>
+									<m:Text text="{testDetails>key}" tooltip="{testDetails>key}" wrapping="false"/>	
+								</template>	
+				       		</Column>
+							<Column hAlign="Begin" width="auto">
+								<m:Label text="{i18n>stepValue}" />
+				       			<template>
+									<m:Text text="{testDetails>value}" tooltip="{testDetails>value}" wrapping="false" />
+								</template>	
+				       		</Column>
+						</columns>	
+					</Table>
+			
+				
+				</m:FlexBox>
+				
+			</m:VBox>
+	
+		</m:Panel>
+	</m:VBox>
+
+
+</core:FragmentDefinition>

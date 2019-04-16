@@ -1,0 +1,80 @@
+<core:FragmentDefinition 
+	xmlns:m="sap.m" 
+	xmlns:core="sap.ui.core"
+    xmlns:srf="srf.control"
+    xmlns="sap.ui.table"
+	xmlns:commons="sap.ui.commons" >
+
+        
+    <TreeTable 
+   
+    	id="srfSelectedEnvTree"
+		width="auto" visibleRowCount="{environments>/srfSelectedEnvTree/count}"
+		rows="{ path: 'environments>/srfSelectedEnvTree', parameters: {arrayNames:['osTitle']} }"
+		ariaLabelledBy="title" 
+		columnHeaderVisible="true"
+		expandFirstLevel="true"
+        selectionMode="None">
+                   
+        <noData>
+			<m:Label 
+				design="Bold"
+				class="sapUiMediumMargin"
+				text="{i18n>noEnvironmentsSelection}" />
+		</noData>
+
+        <columns>	
+       		<Column hAlign="Begin" width="auto">
+       			<m:Label text="{i18n>OS}"/>
+       			<template>
+       				<m:HBox>
+       					<m:Image src="{ path: 'environments>description',
+									formatter: '.formatter.browserImg'}" 
+									class="sapUiSmallMarginEnd" visible="{environments>visible}"/>
+	  				
+						<m:Text text="{environments>description}"/>
+					</m:HBox>
+				</template>	
+       		</Column>
+   		
+       		<Column hAlign="Begin" width="auto" >
+ 				<m:Label text="{i18n>Version}" />
+      			<template>
+					<m:Select items="{ path: 'environments>versions', 
+										sorter: { path : 'environments>version', descending: true } }"
+							  change="onSRFBrowserVersionChanged"
+							  selectedKey="{environments>version}" 
+							  visible="{environments>visible}">
+					
+							<core:Item key="{environments>version}" text="{environments>version}"/>
+				
+					</m:Select>
+				</template>	
+       		</Column>	
+       		      		
+       		<Column hAlign="Begin" width="auto" >
+ 				<m:Label text="{i18n>Resolution}" />
+      			<template>
+      				<m:Select items="{ path: 'environments>resolutions' }"
+							  change="onSRFResolutionChanged"
+							  selectedKey="{environments>resolution}" 
+							  visible="{environments>visible}">
+					
+							<core:Item key="{environments>resolution}" text="{environments>resolution}"/>
+				
+					</m:Select>
+				</template>	
+       		</Column>	
+       		
+       		<Column hAlign="End" width="2rem" >
+ 				<m:Label text="" />
+      			<template>
+					<core:Icon src="sap-icon://delete" press="onDeleteSelectedSRFBrowser" 
+						visible="{testDetails>/runEnvironmentsSelection}" />
+				</template>	
+       		</Column>		
+       		
+       		</columns>
+	</TreeTable>
+	<!--</l:VerticalLayout>-->
+</core:FragmentDefinition>

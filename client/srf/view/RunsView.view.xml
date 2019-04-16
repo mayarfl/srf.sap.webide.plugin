@@ -1,0 +1,24 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout"  
+	controllerName="srf.controller.RunsView"
+	xmlns:srf="srf.control"
+
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>testTableTitle}" class="sapUiSizeCompact"  showNavButton="true" navButtonPress="onNavBack" navButtonType="Back">
+		<headerContent>
+			<core:Fragment fragmentName="srf.view.fragment.PageHeader" type="XML"/>							
+		</headerContent>
+		<content>
+			<Panel expandable="true" expanded="true" headerText="{i18n>MoreRuns}" width="auto" 
+				backgroundDesign="Transparent" class="sapUiSmallMarginTopBottom">
+				<core:Fragment fragmentName="srf.view.fragment.PreviousRuns" type="XML"/>
+			</Panel>
+			<Panel headerText="{i18n>runDetails}" width="auto" 
+				backgroundDesign="Transparent" class="sapUiSmallMarginTopBottom">
+				<core:Fragment fragmentName="srf.view.fragment.runsummary.RunSummary" type="XML"/>
+			</Panel>
+		</content>
+	</Page>
+
+</mvc:View>

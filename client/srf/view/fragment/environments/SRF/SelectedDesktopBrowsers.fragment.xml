@@ -1,0 +1,66 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:srf="srf.control"
+	xmlns:commons="sap.ui.commons" >
+
+	<!--<Text text= "{i18n>selectedBrowsers} ({mcEnvironments>/selectedbrowsers/count})" class="mcEnvText" />-->
+	<Table mode="None" rememberSelections="false"
+		items="{environments>/srfSelectedEnv}"
+		insert="false" 
+		width="auto" growing="true" 
+		growingThreshold="15" growingScrollToLoad="true" 
+		selectionChange="onSelectionChangeHandler"
+		updateFinished="onUpdateFinished"  class="sapUiSizeCompact srfNoPadding">
+
+		<!--<headerToolbar>-->
+		<!--	<Toolbar>-->
+		<!--		<Title id="tableHeader" text="{testsView>/testsTableTitle}"/>-->
+		<!--		<ToolbarSpacer/>-->
+		<!--		<SearchField id="searchField" tooltip="{i18n>testSearchTooltip}"  showRefreshButton="true" showSearchButton="true"-->
+		<!--			liveChange="onLiveSearch" search="onSearch" width="auto"></SearchField>-->
+		<!--	</Toolbar>-->
+		<!--</headerToolbar>-->
+		
+		<columns>
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>OS}" tooltip="{i18n>OS}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>Browser}" tooltip="{i18n>Browser}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>Version}" tooltip="{i18n>Version}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>Resolution}" tooltip="{i18n>Resolution}" wrapping="false"/>
+			</Column>
+			<Column hAlign="End" wrapping="false" width="2rem" >
+				
+			</Column>
+		</columns>
+	
+		<items>
+			<ColumnListItem >
+				<cells>
+					<srf:OS os="{environments>os}"/>
+					<Text text="{environments>browser/name}"/>
+					<commons:DropdownBox items="{ path: 'environments>browser/versions', 
+										sorter: { path : 'environments>version', descending: true } }"
+							  selectionChange="onSRFBrowserVersionChanged"
+							  selectedKey="{environments>browser/version}" >
+						<commons:items>
+							<core:ListItem key="{environments>version}" text="{environments>version}"/>
+						</commons:items>
+					</commons:DropdownBox>
+					<Text text="{environments>resolution}"/>
+					<core:Icon src="sap-icon://delete" press="onDeleteSelectedSRFBrowser" alt="{i18n>deleteEnv}" 
+						visible="{testDetails>/runEnvironmentsSelection}" ></core:Icon>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+
+</core:FragmentDefinition>

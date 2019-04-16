@@ -1,0 +1,80 @@
+<core:FragmentDefinition xmlns="sap.m" 
+		xmlns:core="sap.ui.core"
+		xmlns:srf="srf.control">
+    
+	<OverflowToolbar width="100%" design="Transparent" class="srfTransparent">
+		<content>
+		   <ToolbarSpacer/>
+			<Button text="{i18n>addScript}" tooltip="{i18n>addScriptTooltip}" class="srfBtnColor" press="onAddScriptsDlgOpen" />
+			<!--Button text="{i18n>record}"  type="Accept" tooltip="{i18n>recordTestTooltip}" press="onRecordNewScript" /-->
+		   <!--Button title="{i18n>editTest}" icon="sap-icon://edit" tooltip="{i18n>editScriptTooltip}" press="onAddScriptsDlgOpen"/-->
+			
+			<MenuButton class="srfBtnColor" text="{i18n>newScript}" tooltip="{i18n>newScriptTooltip}">
+	            <menu>
+	                <Menu itemSelected="onMenuItemPress">
+	                    <items>
+	                        <MenuItem text="{i18n>record}" tooltip="{i18n>recordScriptTooltip}" 
+	                    		class="srfBtnColor"
+	                        	icon="{path: 'i18n>testTableTitle', formatter: '.formatter.getRecordImage' }"/>
+	                        <MenuItem text="{i18n>leanFTTemplate}" tooltip="{i18n>createTemplateScriptTooltip}" 
+	                        	class="srfBtnColor"
+	                       		icon="{path: 'i18n>testTableTitle', formatter: '.formatter.getLeanFTImage' }" />
+	                    </items>
+	                </Menu>
+	            </menu>
+        	</MenuButton>
+		</content>
+	</OverflowToolbar>
+    
+    <Table id="scriptsList" class="sapUiSizeCompact srfTblHighlightCol"
+        items="{  
+        			path: 'testDetails>/scripts',
+        			sorter: {
+						path: 'name',
+						descending: false,
+						group: false
+					},
+					groupHeaderFactory: '.getScriptsGroupHeader'
+				}" 
+        growing="true"
+        growingThreshold="10" growingScrollToLoad="false"
+        includeItemInSelection="true" 
+        mode="SingleSelectMaster" selectionChange="onEditScript"
+        rememberSelections="false">
+
+  		<columns>
+			<Column hAlign="Begin" width="40px" />
+			<Column hAlign="Begin" width="auto"/>
+			<Column hAlign="Center" width="25px" />
+			<Column hAlign="Center" width="20px" />
+			<Column hAlign="End" width="20px" />
+		</columns>
+		
+        <items>
+       		<ColumnListItem>
+       			<cells>
+					<Image  src="{ path: 'testDetails>sdk',
+                                   formatter: '.formatter.testType' }" 
+                            width="1.5rem" 
+                            alt="{testDetails>sdk}"
+                            tooltip="{testDetails>sdk}" />
+					<Text text="{testDetails>name}" tooltip="{i18n>editScriptTooltip}"/>
+					<!--<Link text="{path: 'testDetails>parameters',-->
+					<!--			formatter: '.formatter.parametersImg'}" -->
+					<!--	  class="srfLink"-->
+					<!--	  press="onParamEditorOpen"/>	-->
+					<srf:Parameters param="{testDetails>parameters}" class="test40 srfComboMargin" press="onParamEditorOpen"/>
+								
+					<!--<Image  src="{path: 'testDetails>parameters',-->
+					<!--			formatter: '.formatter.parametersImg'}" -->
+					<!--		tooltip="{path: 'testDetails>parameters',-->
+					<!--			formatter: '.formatter.parametersTooltip'}" -->
+					<!--		press="onParamEditorOpen" />-->
+					<core:Icon src="sap-icon://edit-outside" press="onAttendedEditScript" tooltip="{i18n>playerScriptTooltip}" ></core:Icon>
+					<core:Icon src="sap-icon://broken-link" press="onDeleteScript" tooltip="{i18n>removeScriptTooltip}" ></core:Icon>
+
+				</cells>
+       		</ColumnListItem>
+        </items>
+	</Table>
+</core:FragmentDefinition>

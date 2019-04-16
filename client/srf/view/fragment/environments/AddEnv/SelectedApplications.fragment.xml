@@ -1,0 +1,86 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:srf="srf.control" >
+	
+	<Table mode="None" id="applications" rememberSelections="false"
+		items="{mcEnvironments>/selectedmobileapps}"
+		insert="false" 
+		width="auto" growing="true" 
+		growingThreshold="15" growingScrollToLoad="true" 
+		selectionChange="onSelectionChangeHandler"
+		updateFinished="onUpdateFinished">
+
+		<!--<headerToolbar>-->
+		<!--	<Toolbar>-->
+		<!--		<Title id="tableHeader" text="{testsView>/testsTableTitle}"/>-->
+		<!--		<ToolbarSpacer/>-->
+		<!--		<SearchField id="searchField" tooltip="{i18n>testSearchTooltip}"  showRefreshButton="true" showSearchButton="true"-->
+		<!--			liveChange="onLiveSearch" search="onSearch" width="auto"></SearchField>-->
+		<!--	</Toolbar>-->
+		<!--</headerToolbar>-->
+		
+		<columns>
+			<Column hAlign="Begin" wrapping="false" width="85px" >
+				<Text text="{i18n>OS}" tooltip="{i18n>OS}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="280px" >
+				<Text text="{i18n>Name}" tooltip="{i18n>Name}" wrapping="false"/>
+			</Column>		
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>Upload}" tooltip="{i18n>Upload}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="170px" >
+				<Text text="{i18n>UsePackagedVersion}" tooltip="{i18n>UsePackagedVersion}" wrapping="false"/>
+			</Column>
+			<Column hAlign="End" wrapping="false" width="2rem" >
+				
+			</Column>
+		</columns>
+	
+		<items>
+			<ColumnListItem >
+				<cells>
+					<HBox> 
+						<srf:OS image="{mcEnvironments>mobileApp/type}" />
+						<VBox class="appVersion">
+							<Text text=" v{mcEnvironments>mobileApp/appVersion}" tooltip="{mcEnvironments>mobileApp/appVersion}" 
+								wrapping="false" class="appVersion" />
+						</VBox>
+					</HBox>
+					<HBox>
+						<Image src="{	path: 'mcEnvironments>mobileApp/icon',
+										formatter: '.formatter.base64Image'}" height="20px" class="srfBrowsers" />
+						<Text text=" {mcEnvironments>mobileApp/name}" tooltip="{mcEnvironments>mobileApp/name}"/>
+						
+					</HBox>
+					<VBox>
+						<Label text="{i18n>UploadCount} {mcEnvironments>mobileApp/counter}"/>
+	    				<Label text="{	path: 'mcEnvironments>mobileApp/dateTime',
+	    							formatter: '.formatter.timestampToDateTime'}" 
+	    					tooltip="{	path: 'mcEnvironments>mobileApp/dateTime',
+	    							formatter: '.formatter.timestampToDateTime'}"/>
+	    			</VBox>
+					<HBox>
+						<Switch state="{mcEnvironments>mobileAppContext/usePackagedVersion}" 
+							customTextOn=" " customTextOff=" " 
+							tooltip="{	path: 'mcEnvironments>mobileAppContext',
+	    							formatter: '.formatter.usePackagedVersionTooltip'}" 
+							enabled="{mcEnvironments>mobileAppContext/canChangeUsePackagedVersion}">
+							<layoutData>
+								<FlexItemData growFactor="0" />
+							</layoutData>
+						</Switch>
+					
+						<Text text=" "/>
+					</HBox>
+					<core:Icon src="sap-icon://delete" press="onDeleteSelectedApp"></core:Icon>
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+
+</core:FragmentDefinition>

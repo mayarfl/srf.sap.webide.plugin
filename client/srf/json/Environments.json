@@ -1,0 +1,316 @@
+[
+  {
+    "name": "Windows",
+    "version": "7",
+    "browsers": [
+      {
+        "name": "Chrome",
+        "version": "30"
+      },
+      {
+        "name": "Chrome",
+        "version": "31"
+      },
+      {
+        "name": "Chrome",
+        "version": "32"
+      },
+      {
+        "name": "Chrome",
+        "version": "33"
+      },
+      {
+        "name": "Chrome",
+        "version": "34"
+      },
+      {
+        "name": "Chrome",
+        "version": "35"
+      },
+      {
+        "name": "Chrome",
+        "version": "36"
+      },
+      {
+        "name": "Chrome",
+        "version": "37"
+      },
+      {
+        "name": "Chrome",
+        "version": "38"
+      },
+      {
+        "name": "Chrome",
+        "version": "39"
+      },
+      {
+        "name": "Chrome",
+        "version": "40"
+      },
+      {
+        "name": "Chrome",
+        "version": "41"
+      },
+      {
+        "name": "Chrome",
+        "version": "42"
+      },
+      {
+        "name": "Chrome",
+        "version": "43"
+      },
+      {
+        "name": "Chrome",
+        "version": "44"
+      },
+      {
+        "name": "Chrome",
+        "version": "45"
+      },
+      {
+        "name": "Chrome",
+        "version": "46",
+        "isDefault": true
+      },
+      {
+        "name": "Opera",
+        "version": "20"
+      },
+      {
+        "name": "Opera",
+        "version": "21"
+      },
+      {
+        "name": "Opera",
+        "version": "22"
+      },
+      {
+        "name": "Opera",
+        "version": "23"
+      },
+      {
+        "name": "Opera",
+        "version": "24"
+      },
+      {
+        "name": "Opera",
+        "version": "25"
+      },
+      {
+        "name": "Opera",
+        "version": "26"
+      },
+      {
+        "name": "Opera",
+        "version": "27"
+      },
+      {
+        "name": "Opera",
+        "version": "28"
+      },
+      {
+        "name": "Opera",
+        "version": "29"
+      },
+      {
+        "name": "Opera",
+        "version": "30"
+      },
+      {
+        "name": "Opera",
+        "version": "31"
+      },
+      {
+        "name": "Opera",
+        "version": "32"
+      },
+      {
+        "name": "Opera",
+        "version": "33"
+      }
+    ],
+    "platform": "web"
+  },
+  {
+    "name": "Windows",
+    "version": "8.1",
+    "browsers": [
+      {
+        "name": "Chrome",
+        "version": "30"
+      },
+      {
+        "name": "Chrome",
+        "version": "31"
+      },
+      {
+        "name": "Chrome",
+        "version": "32"
+      },
+      {
+        "name": "Chrome",
+        "version": "33"
+      },
+      {
+        "name": "Chrome",
+        "version": "34"
+      },
+      {
+        "name": "Chrome",
+        "version": "35"
+      },
+      {
+        "name": "Chrome",
+        "version": "36"
+      },
+      {
+        "name": "Chrome",
+        "version": "37"
+      },
+      {
+        "name": "Chrome",
+        "version": "38"
+      },
+      {
+        "name": "Chrome",
+        "version": "39"
+      },
+      {
+        "name": "Chrome",
+        "version": "40"
+      },
+      {
+        "name": "Chrome",
+        "version": "41"
+      },
+      {
+        "name": "Chrome",
+        "version": "42"
+      },
+      {
+        "name": "Chrome",
+        "version": "43"
+      },
+      {
+        "name": "Chrome",
+        "version": "44"
+      },
+      {
+        "name": "Chrome",
+        "version": "45"
+      },
+      {
+        "name": "Chrome",
+        "version": "46"
+      },
+      {
+        "name": "Opera",
+        "version": "20"
+      },
+      {
+        "name": "Opera",
+        "version": "21"
+      },
+      {
+        "name": "Opera",
+        "version": "22"
+      },
+      {
+        "name": "Opera",
+        "version": "23"
+      },
+      {
+        "name": "Opera",
+        "version": "24"
+      },
+      {
+        "name": "Opera",
+        "version": "25"
+      },
+      {
+        "name": "Opera",
+        "version": "26"
+      },
+      {
+        "name": "Opera",
+        "version": "27"
+      },
+      {
+        "name": "Opera",
+        "version": "28"
+      },
+      {
+        "name": "Opera",
+        "version": "29"
+      },
+      {
+        "name": "Opera",
+        "version": "30"
+      },
+      {
+        "name": "Opera",
+        "version": "31"
+      },
+      {
+        "name": "Opera",
+        "version": "32"
+      },
+      {
+        "name": "Opera",
+        "version": "33"
+      }
+    ],
+    "platform": "web"
+  },
+  {
+    "name": "Ubuntu",
+    "version": "14",
+    "browsers": [
+      {
+        "name": "Chrome",
+        "version": "42"
+      },
+      {
+        "name": "Chrome",
+        "version": "46"
+      },
+      {
+        "name": "Firefox",
+        "version": "37"
+      },
+      {
+        "name": "Firefox",
+        "version": "38"
+      },
+      {
+        "name": "Firefox",
+        "version": "39"
+      },
+      {
+        "name": "Firefox",
+        "version": "40"
+      },
+      {
+        "name": "Firefox",
+        "version": "41"
+      },
+      {
+        "name": "Firefox",
+        "version": "42"
+      }
+    ],
+    "platform": "web"
+  },
+  {
+    "name": "ANDROID",
+    "version": "5.1.1",
+    "id": "07da953e0de7e829",
+    "browsers": [
+      {
+        "name": "LGE",
+        "version": "Nexus 5"
+      }
+    ],
+    "platform": "mobile"
+  }
+]

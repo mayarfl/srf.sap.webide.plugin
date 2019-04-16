@@ -1,0 +1,51 @@
+{
+	"uuid": "a8bf12e9-1f79-4799-a95c-673d5784a0c6",
+	"name": "mobile1",
+	"description": null,
+	"type": "web",
+	"modifiedDate": 1483530497613,
+	"usageType": "favorite",
+	"browsers": [],
+	"mobiles": [{
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "ASUS Memo Pad 7"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "ASUS Nexus 7 - 1st Gen (WiFi)"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "Amazon Kindle Fire HDX 7 (2013)"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "IOS",
+		"deviceName": "Apple iPhone 5"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "IOS",
+		"deviceName": "Apple iPad Pro 9.7\""
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "IOS",
+		"deviceName": "Apple iPad Mini 2"
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "WP",
+		"deviceName": ""
+	}, {
+		"platformVersion": "",
+		"source": "any",
+		"platformName": "ANDROID",
+		"deviceName": "ASUS Memo Pad 8"
+	}],
+	"applications": []
+}

@@ -1,0 +1,30 @@
+<core:FragmentDefinition
+	xmlns:m="sap.m" 
+	xmlns:core="sap.ui.core"
+    xmlns:srf="srf.control"
+    xmlns:l="sap.ui.layout" 
+    xmlns="sap.ui.table">
+
+	<m:Dialog 
+		 title="{  path: 'testDetails>/runEnvironmentsSelection', 
+						formatter: '.formatter.environmentSelectionTitle' } | { path: 'testDetails>/platform', 
+																				formatter: '.formatter.testPlatformName' }" 
+		 class="sapUiPopupWithPadding sapUiSizeCompact" 
+		 type="Message"
+		 draggable="true"
+		 contentWidth="85rem"
+		 contentHeight="40rem">
+
+	<!--<core:Fragment fragmentName="srf.view.toolbar.AddSRFEnvToolbar" type="XML"/>-->
+    	<core:Fragment fragmentName="srf.view.fragment.environments.AddEnv.AddEnvironment" visible="true" type="XML" width="100%"/>
+
+		<m:beginButton>
+			<m:Button text="{i18n>okButton}" class="srfDefaultBtnColor" press="onSaveNewEnv" />
+		</m:beginButton>
+		<m:endButton>
+			<m:Button text="{i18n>cancelButton}" class="srfBtnColor"  press="onAddNewEnvDlgCancel" />
+		</m:endButton>
+		
+	</m:Dialog>
+
+</core:FragmentDefinition>

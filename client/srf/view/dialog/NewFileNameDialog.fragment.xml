@@ -1,0 +1,19 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+	>
+	
+	<Dialog title="{i18n>newFileTitle}" resizable="false" verticalScrolling="false" 
+		draggable="true" class="sapUiPopupNoPadding sapUiSizeCompact" >
+		<core:Fragment fragmentName="srf.view.fragment.NewFileName" type="XML"/>
+
+
+		<beginButton>
+			<Button text="{i18n>okButton}" press="onCloseNewFileNameDialog" class="srfDefaultBtnColor" enabled="false" />
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancelButton}" class="srfBtnColor" press="onCancelNewFileNameDialog" />
+		</endButton>
+
+	</Dialog>
+</core:FragmentDefinition>

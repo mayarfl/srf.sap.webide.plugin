@@ -1,0 +1,30 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	>
+	<Toolbar design="Transparent" class="sapUiSmallMarginTopBottom srfTransparent sapUiSizeCompact">
+		<Title text="{i18n>addScript}" width="16rem" />
+		<ToolbarSpacer/>
+			<SearchField liveChange="onScriptsSearch"  width="12rem" />
+		<Button text="{i18n>save}"  type="Accept"  
+			class="srfBtnColor"
+			tooltip="{i18n>addScriptTooltip}" press="onSaveScripts" >
+			<layoutData>
+				<ToolbarLayoutData shrinkable="true" />
+				<OverflowToolbarLayoutData priority="Low" />
+			</layoutData>
+		</Button>
+		
+		<Button text="{i18n>cancelButton}" tooltip="{i18n>cancelButtonTooltip}" 
+				class="srfBtnColor"
+				press="onAddScriptsDlgCancel" >
+			<layoutData>
+				<ToolbarLayoutData shrinkable="true" />
+				<OverflowToolbarLayoutData priority="Low" />
+			</layoutData>
+		</Button>
+	
+	</Toolbar>
+	
+</core:FragmentDefinition>

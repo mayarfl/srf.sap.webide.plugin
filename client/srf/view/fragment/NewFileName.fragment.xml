@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m"
+xmlns:core="sap.ui.core"  >
+			<VBox>
+				<HBox>
+					<Label text="{i18n>newFileNameText}" labelFor="idSrfNewFileNameInput"/>
+					<Label  width="0.5rem" />
+					<Input id="idSrfNewFileNameInput" required="true" hAlign="Begin" placeholder="{i18n>newFileNameInputPlaceholder}" 
+						tooltip="{i18n>newFileNameInputTooltip}"  
+							width="auto" maxLength="50"
+							 liveChange="onNewFileNameChanged"/>
+				</HBox>
+				<Label />
+				<Label id="idSrfNewFileNameErrorText" width="16rem" text="" class="sapUiNoContentPadding srfError" />
+			</VBox>
+</core:FragmentDefinition>

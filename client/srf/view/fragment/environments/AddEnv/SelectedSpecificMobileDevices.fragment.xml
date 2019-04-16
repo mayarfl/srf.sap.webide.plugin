@@ -1,0 +1,77 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:srf="srf.control"
+	xmlns:commons="sap.ui.commons" >
+
+	<Panel 
+		backgroundDesign="Transparent" expandable="true" 
+		expanded="true" 
+		visible="{ path: 'mcEnvironments>/selectedspecificdevices/length',
+						formatter: '.formatter.specificDevicesSelectionVisible'	}"
+		headerText="{i18n>specificDevices}" >
+		
+		<Table mode="None" id="selectedspecificdevices" rememberSelections="false"
+			items="{mcEnvironments>/selectedspecificdevices}"
+			insert="false" 
+			width="auto" growing="true" 
+			growingThreshold="15" growingScrollToLoad="true" 
+			selectionChange="onSelectionChangeHandler"
+			title="{i18n>specificDevices}"
+			updateFinished="onUpdateFinished"  class="sapUiSizeCompact srfNoPadding">
+
+			<columns>
+				<Column hAlign="Begin" wrapping="false" width="120px" >
+					<Text text="{i18n>Version}" tooltip="{i18n>Version}" wrapping="false"/>
+				</Column>
+				<Column hAlign="Begin" wrapping="false" width="auto" >
+					<Text text="{i18n>Model}" tooltip="{i18n>Model}" wrapping="false"/>
+				</Column>	
+				<Column hAlign="Begin" wrapping="false" width="auto" >
+					<Text text="{i18n>Name}" tooltip="{i18n>Name}" wrapping="false"/>
+				</Column>
+				<Column hAlign="Begin" wrapping="false" width="120px" >
+					<Text text="{i18n>Availability}" tooltip="{i18n>Availability}" wrapping="false"/>
+				</Column>
+				<Column hAlign="End" wrapping="false" width="2rem" >
+					
+				</Column>
+			</columns>
+		
+			<items>
+				<ColumnListItem >
+					<cells>
+						<HBox>
+							<srf:OS image="{mcEnvironments>platformName}" width="30px"/>
+							<Text text="{mcEnvironments>platformVersion}" />
+						</HBox>
+						
+						<Text text="{mcEnvironments>deviceName}" tooltip="{mcEnvironments>deviceName}" />
+						
+						<VBox>
+							<Text text="{mcEnvironments>nickName}" tooltip="{mcEnvironments>nicName}" wrapping="false"/>
+							<Text text="ID {mcEnvironments>udid}" tooltip="{mcEnvironments>udid}" wrapping="false"/>
+						</VBox>
+						<HBox> 											
+							<Image src="{ parts: [{path: 'mcEnvironments>currentReservation'}, {path: 'mcEnvironments>connected'}],
+										  formatter: '.formatter.deviceAvailabilityImage'}"  
+									tooltip="{ parts: [{path: 'mcEnvironments>currentReservation'}, {path: 'mcEnvironments>connected'}],
+										  formatter: '.formatter.deviceAvailabilityTooltip'}"
+								 />
+							<Text text="{ parts: [{path: 'mcEnvironments>currentReservation'}, {path: 'mcEnvironments>connected'}], 
+										  formatter: '.formatter.deviceAvailable'}" 
+									tooltip="{ parts: [{path: 'mcEnvironments>currentReservation'}, {path: 'mcEnvironments>connected'}],
+										  formatter: '.formatter.deviceAvailabilityTooltip'}"
+									wrapping="false"/>
+						</HBox>
+						<core:Icon src="sap-icon://delete" press="onDeleteSelectedSpecificDevice" 
+							visible="{testDetails>/runEnvironmentsSelection}"></core:Icon>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	
+	</Panel>
+
+</core:FragmentDefinition>

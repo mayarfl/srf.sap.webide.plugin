@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:srf="srf.control">
+	<OverflowToolbar width="100%" design="Transparent" class="srfTransparent sapUiSizeCompact"  enabled="{srf>/srf_loggedIn}">
+		<content>
+			<ToolbarSpacer/>
+			<Label text="{ path: 'testDetails>/scriptRun', formatter: '.formatter.scriptRunCaption' }" design="Bold"/>
+			<srf:EnvironmentDetails id="scriptRunEnv" grey="true" os="{testDetails>/scriptRun/environment/os}"
+				browser="{testDetails>/scriptRun/environment/browser}" styleClass="environment" />
+			<ToolbarSpacer/>
+		</content>
+	</OverflowToolbar>
+	<OverflowToolbar width="100%" design="Transparent" class="sapUiTinyMarginTopBottom  srfTransparent">
+		<content>
+			<ToolbarSpacer/>
+			<ToggleButton  icon="sap-icon://hint" 
+				class="srfBtnImage srfBtnColor" 
+				tooltip="{  path: 'testDetails>/btnShowStepProperties/pressed',
+							formatter: '.formatter.btnStepPropertiesTooltip'}"
+				press="onShowStepPropertiesClick" 
+				visible="{testDetails>/btnShowStepProperties/visible}"
+				pressed="false" id="btnShowStepProperties" />
+			<Button icon="sap-icon://notes"
+					class="srfBtnImage srfBtnColor" 
+					tooltip="{i18n>Log}" press="onLogButtonClick" id="executionLog"/>
+			<Link text="{i18n>moreInformation}" tooltip="{i18n>moreInformationTooltip}" 
+					id="moreInformation" press="onMoreInformation" class="srfLink"/>
+		</content>
+	</OverflowToolbar>
+</core:FragmentDefinition>

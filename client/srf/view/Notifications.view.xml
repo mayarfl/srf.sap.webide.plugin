@@ -1,0 +1,18 @@
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:srf="srf.control"
+	xmlns:html="http://www.w3.org/1999/xhtml" 
+	xmlns:ux3="sap.ui.ux3"
+	controllerName="srf.controller.Notifications">
+	<Page title="{i18n>testTableTitle}" class="sapUiSizeCompact" showNavButton="true" navButtonPress="onNavBack">
+		<headerContent>
+			<core:Fragment fragmentName="srf.view.fragment.PageHeader" type="XML"/>	
+		</headerContent>
+		<content>
+		    <core:Fragment fragmentName="srf.view.fragment.notifications.Notifications" type="XML"/>
+		</content>
+	</Page>
+</mvc:View>

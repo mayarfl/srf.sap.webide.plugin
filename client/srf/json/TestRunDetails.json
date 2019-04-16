@@ -1,0 +1,562 @@
+[
+  {
+    "id": "9966ba2d-34c5-4dd7-a1cd-fd0f523b1392",
+    "name": "Test Basic Operations",
+    "start": "2016-07-13T11:44:21.786Z",
+    "durationMs": 19243,
+    "status": "running",
+    "test": {
+      "id": "4474338a-47dd-46ae-b113-b886e3c44582",
+      "name": "Test Basic Operations",
+      "description": "test description",
+      "creationDate": "2016-04-10T07:48:30.340Z",
+      "modifiedDate": "2016-07-13T11:18:57.295Z",
+      "environments": [
+        {
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "chrome",
+            "version": "50"
+          },
+          "type": "web"
+        }
+      ],
+      "owner": {
+        "id": "09ea416b-5c62-4fa0-9089-83d86210d53b",
+        "name": "Ravit Kodman"
+      },
+      "type": "web",
+      "subType": "auto",
+      "additionalData": {
+        "dataDesc": "Env selection, last runs success failure, etc ... 2",
+        "execCount": 9,
+        "lastRunData": {
+          "status": "success",
+          "scriptStatus": {
+            "errored": 9
+          },
+          "environmentCount": 1
+        }
+      },
+      "scriptsCount": "9",
+      "scripts": [
+        {
+          "id": "30a7b7ce-392a-4cc0-99e5-cbe258dcc8e0",
+          "test": {
+            "id": "4474338a-47dd-46ae-b113-b886e3c44582"
+          },
+          "primaryResource": {
+            "id": "88c78780-f76e-42c7-a751-6932156fbcef"
+          },
+          "resources": null,
+          "creationDate": "2016-04-10T11:46:13.173Z",
+          "modifiedDate": "2016-04-10T11:46:13.173Z",
+          "charterBlob": null,
+          "params": null
+        },
+        {
+          "id": "c568b978-e565-4b3a-96fa-33be3ce5e54f",
+          "test": {
+            "id": "4474338a-47dd-46ae-b113-b886e3c44582"
+          },
+          "primaryResource": {
+            "id": "1ce4e4df-ca2f-4b47-bcb7-e181674f4e07"
+          },
+          "resources": null,
+          "creationDate": "2016-04-10T11:46:20.294Z",
+          "modifiedDate": "2016-04-10T11:46:20.294Z",
+          "charterBlob": null,
+          "params": null
+        },
+        {
+          "id": "01032d8e-c89f-471b-a63e-ab1f35e9d74d",
+          "test": {
+            "id": "4474338a-47dd-46ae-b113-b886e3c44582"
+          },
+          "primaryResource": {
+            "id": "30d953e0-a961-4fda-989b-5e7c2329e99c"
+          },
+          "resources": null,
+          "creationDate": "2016-04-10T11:45:53.695Z",
+          "modifiedDate": "2016-04-10T11:45:53.695Z",
+          "charterBlob": null,
+          "params": null
+        },
+        {
+          "id": "939245e0-2b9c-45c7-b051-ae7c0269577d",
+          "test": {
+            "id": "4474338a-47dd-46ae-b113-b886e3c44582"
+          },
+          "primaryResource": {
+            "id": "49a035d2-bdf9-4068-82a3-89197081d080"
+          },
+          "resources": null,
+          "creationDate": "2016-04-10T11:46:13.173Z",
+          "modifiedDate": "2016-04-10T11:46:13.173Z",
+          "charterBlob": null,
+          "params": null
+        },
+        {
+          "id": "1e622168-f900-4771-a502-3e016e9c7242",
+          "test": {
+            "id": "4474338a-47dd-46ae-b113-b886e3c44582"
+          },
+          "primaryResource": {
+            "id": "63c69395-f246-42d3-a11a-846ed340584c"
+          },
+          "resources": null,
+          "creationDate": "2016-04-10T11:46:20.294Z",
+          "modifiedDate": "2016-04-10T11:46:20.294Z",
+          "charterBlob": null,
+          "params": null
+        },
+        {
+          "id": "eb1f1179-d7f9-4b95-8c17-ce7fb4cd00fe",
+          "test": {
+            "id": "4474338a-47dd-46ae-b113-b886e3c44582"
+          },
+          "primaryResource": {
+            "id": "e5f7ae0d-a800-4066-9aa3-625f32737374"
+          },
+          "resources": null,
+          "creationDate": "2016-04-10T11:45:53.695Z",
+          "modifiedDate": "2016-04-10T11:45:53.695Z",
+          "charterBlob": null,
+          "params": null
+        },
+        {
+          "id": "748cc41a-2dca-44c0-acd9-9a7a5f9ff69b",
+          "test": {
+            "id": "4474338a-47dd-46ae-b113-b886e3c44582"
+          },
+          "primaryResource": {
+            "id": "c452c40a-5b89-4239-ae28-bb0417839844"
+          },
+          "resources": null,
+          "creationDate": "2016-04-10T11:46:13.173Z",
+          "modifiedDate": "2016-04-10T11:46:13.173Z",
+          "charterBlob": null,
+          "params": null
+        },
+        {
+          "id": "f8a8ab08-0187-400f-a5b6-8070623a8468",
+          "test": {
+            "id": "4474338a-47dd-46ae-b113-b886e3c44582"
+          },
+          "primaryResource": {
+            "id": "fbe4b682-9017-4d14-b629-0343c01e2169"
+          },
+          "resources": null,
+          "creationDate": "2016-04-10T11:46:20.294Z",
+          "modifiedDate": "2016-04-10T11:46:20.294Z",
+          "charterBlob": null,
+          "params": null
+        },
+        {
+          "id": "1ff3cc2b-7689-4c23-b1d5-82671a370d52",
+          "test": {
+            "id": "4474338a-47dd-46ae-b113-b886e3c44582"
+          },
+          "primaryResource": {
+            "id": "31fea452-094c-467f-b1a4-e605008486ee"
+          },
+          "resources": null,
+          "creationDate": "2016-04-10T11:45:53.695Z",
+          "modifiedDate": "2016-04-10T11:45:53.695Z",
+          "charterBlob": null,
+          "params": null
+        }
+      ]
+    },
+    "tags": [
+      {
+        "id": "a99ba01e-d2f1-43ee-a4cf-55c02b4b0e7d",
+        "name": "tdtt",
+        "group": "test"
+      },
+      {
+        "id": "bbbf78ac-86ee-4754-8e8f-2dc7c814284f",
+        "name": "reterpo6tu",
+        "group": "test"
+      }
+    ],
+    "user": {
+      "id": "100",
+      "name": "user1"
+    },
+    "scriptRuns": [
+      {
+        "id": "6b6f614f-f539-4e17-b70e-c80c5f5e13b0",
+        "name": null,
+        "scriptInstance": {
+          "id": "939245e0-2b9c-45c7-b051-ae7c0269577d"
+        },
+        "testRun": {
+          "id": "9966ba2d-34c5-4dd7-a1cd-fd0f523b1392"
+        },
+        "environment": {
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "chrome",
+            "version": "50"
+          },
+          "type": "web"
+        },
+        "start": "2016-07-13T11:44:21.859Z",
+        "durationMs": 19189,
+        "status": "pending",
+        "assetInfo": {
+          "id": "49a035d2-bdf9-4068-82a3-89197081d080",
+          "name": "Start Alarm",
+          "description": "resource description",
+          "type": "script",
+          "sdk": "js",
+          "originalFileName": "scripts/startAlarm.js",
+          "physicalFileName": "49a035d2-bdf9-4068-82a3-89197081d080",
+          "runner": "mocha",
+          "owner": "Rotem Grosman",
+          "creationDate": "2016-04-10T13:39:24.017+03:00",
+          "modificationDate": "2016-04-10T13:39:24.017+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "1"
+        },
+        "scriptSteps": []
+      },
+      {
+        "id": "bd6f08d0-940e-46f7-a9f5-238b02a940e7",
+        "name": null,
+        "scriptInstance": {
+          "id": "01032d8e-c89f-471b-a63e-ab1f35e9d74d"
+        },
+        "testRun": {
+          "id": "9966ba2d-34c5-4dd7-a1cd-fd0f523b1392"
+        },
+        "environment": {
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "chrome",
+            "version": "50"
+          },
+          "type": "web"
+        },
+        "start": "2016-07-13T11:44:21.868Z",
+        "durationMs": 19180,
+        "status": "pending",
+        "assetInfo": {
+          "id": "30d953e0-a961-4fda-989b-5e7c2329e99c",
+          "name": "Activate Air Condition",
+          "description": "resource description",
+          "type": "script",
+          "sdk": "js",
+          "originalFileName": "scripts/acrivateAC.js",
+          "physicalFileName": "30d953e0-a961-4fda-989b-5e7c2329e99c",
+          "runner": "mocha",
+          "owner": "Ravit Kodman",
+          "creationDate": "2016-04-10T13:39:28.902+03:00",
+          "modificationDate": "2016-04-10T13:39:28.902+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "1"
+        },
+        "scriptSteps": []
+      },
+      {
+        "id": "c3e30755-a00d-4a3d-90c6-4de292413709",
+        "name": null,
+        "scriptInstance": {
+          "id": "748cc41a-2dca-44c0-acd9-9a7a5f9ff69b"
+        },
+        "testRun": {
+          "id": "9966ba2d-34c5-4dd7-a1cd-fd0f523b1392"
+        },
+        "environment": {
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "chrome",
+            "version": "50"
+          },
+          "type": "web"
+        },
+        "start": "2016-07-13T11:44:21.876Z",
+        "durationMs": 19172,
+        "status": "pending",
+        "assetInfo": {
+          "id": "c452c40a-5b89-4239-ae28-bb0417839844",
+          "name": "Make Coffee",
+          "description": "resource description",
+          "type": "mobile",
+          "sdk": "selenium",
+          "originalFileName": "scripts/makeCoffee.js",
+          "physicalFileName": "c452c40a-5b89-4239-ae28-bb0417839844",
+          "runner": "mocha",
+          "owner": "Amit Bezalel",
+          "creationDate": "2016-04-10T13:40:08.725+03:00",
+          "modificationDate": "2016-04-10T13:40:08.725+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "2"
+        },
+        "scriptSteps": []
+      },
+      {
+        "id": "00eab02d-39e2-4242-a17c-8eb17f8b232b",
+        "name": null,
+        "scriptInstance": {
+          "id": "30a7b7ce-392a-4cc0-99e5-cbe258dcc8e0"
+        },
+        "testRun": {
+          "id": "9966ba2d-34c5-4dd7-a1cd-fd0f523b1392"
+        },
+        "environment": {
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "chrome",
+            "version": "50"
+          },
+          "type": "web"
+        },
+        "start": "2016-07-13T11:44:21.881Z",
+        "durationMs": 19167,
+        "status": "pending",
+        "assetInfo": {
+          "id": "88c78780-f76e-42c7-a751-6932156fbcef",
+          "name": "Init Smart Home",
+          "description": "resource description",
+          "type": "script",
+          "sdk": "js",
+          "originalFileName": "scripts/initSmartHome.js",
+          "physicalFileName": "88c78780-f76e-42c7-a751-6932156fbcef",
+          "runner": "mocha",
+          "owner": "Ran Sidon",
+          "creationDate": "2016-04-10T13:38:29.015+03:00",
+          "modificationDate": "2016-04-10T13:38:29.015+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "2"
+        },
+        "scriptSteps": []
+      },
+      {
+        "id": "d4dd81cc-43f8-46cd-bffa-af78faa007b9",
+        "name": null,
+        "scriptInstance": {
+          "id": "1e622168-f900-4771-a502-3e016e9c7242"
+        },
+        "testRun": {
+          "id": "9966ba2d-34c5-4dd7-a1cd-fd0f523b1392"
+        },
+        "environment": {
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "chrome",
+            "version": "50"
+          },
+          "type": "web"
+        },
+        "start": "2016-07-13T11:44:21.881Z",
+        "durationMs": 19167,
+        "status": "pending",
+        "assetInfo": {
+          "id": "63c69395-f246-42d3-a11a-846ed340584c",
+          "name": "Turn On Music",
+          "description": "resource description",
+          "type": "script",
+          "sdk": "js",
+          "originalFileName": "scripts/turnOnMusic.js",
+          "physicalFileName": "63c69395-f246-42d3-a11a-846ed340584c",
+          "runner": "mocha",
+          "owner": "Hadas Rodal",
+          "creationDate": "2016-04-10T13:39:34.151+03:00",
+          "modificationDate": "2016-04-10T13:39:34.151+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "1"
+        },
+        "scriptSteps": []
+      },
+      {
+        "id": "f944edb5-c801-4f43-bb10-552b8fb38647",
+        "name": null,
+        "scriptInstance": {
+          "id": "c568b978-e565-4b3a-96fa-33be3ce5e54f"
+        },
+        "testRun": {
+          "id": "9966ba2d-34c5-4dd7-a1cd-fd0f523b1392"
+        },
+        "environment": {
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "chrome",
+            "version": "50"
+          },
+          "type": "web"
+        },
+        "start": "2016-07-13T11:44:21.882Z",
+        "durationMs": 19166,
+        "status": "pending",
+        "assetInfo": {
+          "id": "1ce4e4df-ca2f-4b47-bcb7-e181674f4e07",
+          "name": "Open Shutters",
+          "description": "resource description",
+          "type": "script",
+          "sdk": "js",
+          "originalFileName": "scripts/openShutters.js",
+          "physicalFileName": "1ce4e4df-ca2f-4b47-bcb7-e181674f4e07",
+          "runner": "mocha",
+          "owner": "Adi Marcus",
+          "creationDate": "2016-04-10T13:39:13.333+03:00",
+          "modificationDate": "2016-04-10T13:39:13.333+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "1"
+        },
+        "scriptSteps": []
+      },
+      {
+        "id": "1871bc85-2297-4a2f-b02f-a8a9b9ea6da5",
+        "name": null,
+        "scriptInstance": {
+          "id": "1ff3cc2b-7689-4c23-b1d5-82671a370d52"
+        },
+        "testRun": {
+          "id": "9966ba2d-34c5-4dd7-a1cd-fd0f523b1392"
+        },
+        "environment": {
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "chrome",
+            "version": "50"
+          },
+          "type": "web"
+        },
+        "start": "2016-07-13T11:44:21.882Z",
+        "durationMs": 19166,
+        "status": "pending",
+        "assetInfo": {
+          "id": "31fea452-094c-467f-b1a4-e605008486ee",
+          "name": "callPolice",
+          "description": "resource description",
+          "type": "web",
+          "sdk": "uft",
+          "originalFileName": "scripts/callPolice.js",
+          "physicalFileName": "mocha",
+          "runner": "31fea452-094c-467f-b1a4-e605008486ee",
+          "owner": "Noam Doron",
+          "creationDate": "2016-04-10T13:39:18.885+03:00",
+          "modificationDate": "2016-04-10T13:39:18.885+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "2"
+        },
+        "scriptSteps": []
+      },
+      {
+        "id": "3537070b-f40a-4153-a576-046eeaaddcca",
+        "name": null,
+        "scriptInstance": {
+          "id": "f8a8ab08-0187-400f-a5b6-8070623a8468"
+        },
+        "testRun": {
+          "id": "9966ba2d-34c5-4dd7-a1cd-fd0f523b1392"
+        },
+        "environment": {
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "chrome",
+            "version": "50"
+          },
+          "type": "web"
+        },
+        "start": "2016-07-13T11:44:21.883Z",
+        "durationMs": 19166,
+        "status": "pending",
+        "assetInfo": {
+          "id": "fbe4b682-9017-4d14-b629-0343c01e2169",
+          "name": "Rotate Kitchen Camera",
+          "description": "resource description",
+          "type": "web",
+          "sdk": "uft",
+          "originalFileName": "scripts/rotateKitchenCamera.js",
+          "physicalFileName": "fbe4b682-9017-4d14-b629-0343c01e2169",
+          "runner": "mocha",
+          "owner": "Amir Wigelman",
+          "creationDate": "2016-04-10T13:39:58.247+03:00",
+          "modificationDate": "2016-04-10T13:39:58.247+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "2"
+        },
+        "scriptSteps": []
+      },
+      {
+        "id": "cbea901c-fc96-4da3-83cd-76c259da9969",
+        "name": null,
+        "scriptInstance": {
+          "id": "eb1f1179-d7f9-4b95-8c17-ce7fb4cd00fe"
+        },
+        "testRun": {
+          "id": "9966ba2d-34c5-4dd7-a1cd-fd0f523b1392"
+        },
+        "environment": {
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "chrome",
+            "version": "50"
+          },
+          "type": "web"
+        },
+        "start": "2016-07-13T11:44:21.886Z",
+        "durationMs": 19163,
+        "status": "pending",
+        "assetInfo": {
+          "id": "e5f7ae0d-a800-4066-9aa3-625f32737374",
+          "name": "Turn On Livingroom Lights",
+          "description": "resource description",
+          "type": "script",
+          "sdk": "js",
+          "originalFileName": "scripts/turnOnLivingRoomLights.js",
+          "physicalFileName": "e5f7ae0d-a800-4066-9aa3-625f32737374",
+          "runner": "mocha",
+          "owner": "Oren Gurfinkel",
+          "creationDate": "2016-04-10T13:38:45.545+03:00",
+          "modificationDate": "2016-04-10T13:38:45.545+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "1"
+        },
+        "scriptSteps": []
+      }
+    ]
+  }
+]

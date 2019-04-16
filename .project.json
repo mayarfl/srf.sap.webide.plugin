@@ -1,0 +1,39 @@
+{
+  "projectType": [
+    "sap.watt.uitools.ide.feature",
+    "sap.watt.uitools.ide.web"
+  ],
+  "plugindevelopment": {
+    "dependencies": {
+      "all": []
+    },
+    "devUrlParameters": {
+      "sap-ide-debug": "false",
+      "sap-ui-debug": "false"
+    }
+  },
+  "generation": [
+    {
+      "templateId": "WebIDEPlugins.rightpane",
+      "templateVersion": "1.0.0",
+      "dateTimeStamp": "Tue, 07 Jun 2016 10:42:17 GMT"
+    },
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationComponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Thu, 09 Jun 2016 10:59:48 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "hcpdeploy": {
+    "account": "a182b0175",
+    "name": "srffeature",
+    "lastVersionWeTriedToDeploy": "1.0.25"
+  }
+}

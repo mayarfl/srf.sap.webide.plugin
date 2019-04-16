@@ -1,0 +1,45 @@
+<core:FragmentDefinition 
+        xmlns="sap.m" 
+        xmlns:core="sap.ui.core" 
+        xmlns:form="sap.ui.layout.form"
+        >
+        <OverflowToolbar design="Transparent" class="sapUiSmallMarginTopBottom srfTransparent sapUiSizeCompact"  enabled="{srf>/srf_loggedIn}">
+        	<Title text="{testsView>/projectName}" />
+
+           <ToolbarSpacer/>
+           <Button  icon="sap-icon://refresh" class="srfBtnColor"
+                   tooltip="{i18n>testRefresh}" press="onRefresh">
+                   <layoutData>
+                           <ToolbarLayoutData shrinkable="true" />
+                           <OverflowToolbarLayoutData priority="Low" />
+                   </layoutData>
+           </Button>
+           
+           <MenuButton text="{i18n>btnNewTest}" class="srfBtnColor" tooltip="{i18n>btnNewTestTooltip}">
+            <menu>
+                <Menu itemSelected="onNewTest">
+                    <items>
+                        <MenuItem text="{i18n>menuItemWebPlatform}" icon="sap-icon://world" tooltip="{i18n>menuWebPlatformTooltip}" class="srfMenuItem"/>
+                        <MenuItem text="{i18n>menuItemMobilePlatform}" icon="sap-icon://iphone" tooltip="{i18n>menuMobilePlatformTooltip}" class="srfMenuItem" />
+        
+                    </items>
+                </Menu>
+            </menu>
+        	</MenuButton>
+           
+           <!-- <Button text="{i18n>newTest}"  tooltip="{i18n>newTestTooltip}" press="onNewTest" >-->
+           <!--        <layoutData>-->
+           <!--                <ToolbarLayoutData shrinkable="true" />-->
+           <!--                <OverflowToolbarLayoutData priority="Low" />-->
+           <!--        </layoutData>-->
+           <!--</Button>-->
+			<Button icon="sap-icon://media-play"  enabled="{testsView>/btnRunEnabled}"	
+				class="srfDefaultBtnColor" press="onRun"  tooltip="{i18n>runTestsTooltip}" >
+                   <layoutData>
+                           <ToolbarLayoutData shrinkable="true" />
+                           <OverflowToolbarLayoutData priority="High" />
+                   </layoutData>
+           </Button>
+
+        </OverflowToolbar>
+</core:FragmentDefinition>

@@ -1,0 +1,47 @@
+{
+	"name": "experience.center.sap.webide.plugin",
+	"title": "Micro Focus StormRunner Functional",
+	"description": "Micro Focus StormRunner Functional 3.1",
+	"version": "1.0.7",
+	"icon": "logo-blue.png",
+	"homepage": "https://admhelp.microfocus.com/srf/en/latest/Default.htm#cshid=sap ",
+	"author": {
+		"name": "Micro Focus",
+		"email": "sales@microfocus.com",
+		"url": "https://www.microfocus.com",
+		"icon": "MicroFocusLogo.png"
+	},
+	"main": "./srf/Component.js",
+	"dependencies": {},
+	"repository": {
+		"type": "git",
+		"url": "https://git.hana.ondemand.com/a182b0175/srffeature"
+	},
+	"keywords": [
+		"SRF"
+	],
+	"license": "Apache-2.0",
+	"scripts": {
+		"build": "node ./scripts/bundle.js && npm run client && npm run copy",
+		"client": "shx mkdir dist/client && mv dist/v** dist/client && cp dist/package.json dist/client/",
+		"copy": "shx cp ../README.md dist/ && cp ../LICENSE dist/ && cp ../NOTICE.txt dis--help"
+	},
+	"devDependencies": {
+		"@sap-webide/webide-client-tools": "2.3.4",
+		"@ui5/fs": "0.2.0",
+		"@ui5/builder": "0.2.5",
+		"shx": "^0.3.2"
+	},
+	"bundledPlugins": {
+		"srf": "file:srf"
+	},
+	"webidePreloads": {
+		"js": [
+			"config-preload.js",
+			"resources/bundleUI5Resources.js"
+		],
+		"config": [
+			"config-preload.json"
+		]
+	}
+}

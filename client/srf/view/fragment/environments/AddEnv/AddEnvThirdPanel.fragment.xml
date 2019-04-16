@@ -1,0 +1,60 @@
+<core:FragmentDefinition
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:srf="srf.control">
+
+<VBox>
+	<HBox  id="selectedItemsHBox" visible="{ parts: [ {path: 'mcEnvironments>/hasSelection'}, { path: 'environments>/hasSelection'}],
+							   formatter: '.formatter.selectedItemsHBoxVisible'	}">
+		<VBox>
+			<Panel backgroundDesign="Transparent" expandable="true" 
+					expanded="true" 
+					height="100%"
+					visible="{ parts: [ {path: 'testDetails>/platform'}, { path: 'environments>/hasSelection'}],
+							   formatter: '.formatter.browsersSelectionVisible'	}"
+					headerText="{i18n>selectedBrowsers} ({environments>/srfSelectedEnv/length})"
+					width="100%" >
+			   	<core:Fragment fragmentName="srf.view.fragment.environments.AddEnv.SelectedBrowsersTree" type="XML" width="100%"/>
+			</Panel>			
+			<Panel backgroundDesign="Transparent" expandable="true" 
+					expanded="true" 
+					visible="{ parts: [ {path: 'testDetails>/platform'}, { path: 'mcEnvironments>/totaldevicescount'}],
+							   formatter: '.formatter.devicesSelectionVisible'	}"
+					headerText="{i18n>selectedDevices} ({mcEnvironments>/totaldevicescount})" 
+					width="100%" >
+
+				<core:Fragment fragmentName="srf.view.fragment.environments.AddEnv.SelectedMobileDevices" type="XML" width="100%"/>
+		   		<core:Fragment fragmentName="srf.view.fragment.environments.AddEnv.SelectedSpecificMobileDevices" type="XML" width="100%"/>
+			</Panel>	
+			
+			<Panel backgroundDesign="Transparent" 
+				visible="{ parts: [ {path: 'testDetails>/platform'}, { path: 'mcEnvironments>/totaldevicescount'}],
+							   formatter: '.formatter.runContextSelectionVisible'	}" 
+				width="100%" >
+				
+				<core:Fragment fragmentName="srf.view.fragment.environments.AddEnv.RunContext" type="XML" width="100%"/>
+			</Panel>
+			
+			<Panel backgroundDesign="Transparent" expandable="true" 
+	   			expanded="true" 
+	   			headerText="{i18n>mcApplications}  ({mcEnvironments>/selectedmobileapps/count})" 
+	   			width="auto"  
+	    		visible="{ parts: [ {path: 'testDetails>/platform'}, { path: 'mcEnvironments>/selectedmobileapps/count'}],
+							formatter: '.formatter.appsSelectionVisible'	}"
+	    		class="sapUiTinyMarginTop" >
+	   			<core:Fragment fragmentName="srf.view.fragment.environments.AddEnv.SelectedApplications" type="XML" width="100%"/>
+	 		</Panel>
+		</VBox>
+	</HBox>
+	
+	<HBox id="noSelectionHBox" visible="{ parts: [ {path: 'mcEnvironments>/hasSelection'}, { path: 'environments>/hasSelection'}],
+							   formatter: '.formatter.noSelectionHBox'	}" width="100%" class="sapUiTinyMargin">
+		<VBox>
+			<Label text="{i18n>noMCSelection}" />
+			<BusyIndicator class="srfNoMCSelectionBusy" visible="{mcEnvironments>/busy}"/>
+		</VBox>
+	</HBox>
+</VBox>
+
+</core:FragmentDefinition>

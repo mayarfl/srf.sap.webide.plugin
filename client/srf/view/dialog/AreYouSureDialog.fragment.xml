@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>deleteTestTitle}" type="Message" draggable="true" verticalScrolling="false"  class="sapUiPopupWithPadding">
+		<Text text="{i18n>deleteTestText}"></Text>
+		<beginButton>
+			<Button text="{i18n>okButton}" class="srfDefaultBtnColor" press="onCloseAreYouSureDialog"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancelButton}" class="srfBtnColor" press="onCancelAreYouSureDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

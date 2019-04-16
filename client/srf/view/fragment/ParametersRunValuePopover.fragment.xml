@@ -1,0 +1,48 @@
+<core:FragmentDefinition 
+	xmlns="sap.ui.table" 
+	xmlns:m="sap.m" 
+	xmlns:core="sap.ui.core" >
+
+	<m:Popover
+		showHeader="false"
+		contentWidth="21rem"
+		contentHeight="auto"
+		resizable="true"
+		placement="Bottom" class="sapUiSizeCompact">
+	
+		<Table 
+			width="auto" heigth="7.5rem" visibleRowCount="5"
+	        rows = "{testDetails>params}"
+	        class="srfNoPadding"
+	        ariaLabelledBy="title" 
+	        selectionMode="None"
+	        selectionBehavior="RowOnly"
+	        rememberSelections="false">
+	
+	       <columns>	
+	       		<Column hAlign="Center" width="1.5rem" >
+	       			<m:Label text="" />
+	       			<template>
+						<m:Image src="{ path: 'testDetails>hasNonDefaultValue',
+									   formatter: '.formatter.parametersDefaultValueIndicator' }" 
+								tooltip="{ path: 'testDetails>hasNonDefaultValue',
+										   formatter: '.formatter.parametersDefaultValueIndicatorTooltip' }"  />
+					</template>	
+	       		</Column>
+				<Column hAlign="Begin" width="7rem" >
+					<m:Label text="{i18n>comumnName}" />
+	       			<template>
+						<m:Text text="{testDetails>name}" tooltip="{testDetails>name}" />	
+					</template>	
+	       		</Column>
+				<Column hAlign="Begin" width="auto">
+					<m:Label text="{i18n>columnValue}" />
+	       			<template>
+						<m:Text text="{testDetails>value}" tooltip="{testDetails>value}"  />
+					</template>	
+	       		</Column>
+			</columns>	
+		</Table>
+	</m:Popover>
+
+</core:FragmentDefinition>

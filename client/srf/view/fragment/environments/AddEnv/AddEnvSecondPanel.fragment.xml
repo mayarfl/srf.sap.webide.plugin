@@ -1,0 +1,187 @@
+<core:FragmentDefinition
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:srf="srf.control">
+
+	<VBox class="srfSecond">
+		<!-- winBrowsersPanel -->
+		<VBox>
+			<FlexBox items="{ path: 'environments>/srfEnv/Windows/osArr' }" 
+					 id="winBrowsersPanel" direction="Column">
+				<items>
+					<Panel expandable="true" expanded="{environments>expanded}" 
+						headerText="{environments>name} {environments>version}" 
+						backgroundDesign="Transparent" class="srfNoMargin"
+						width="16rem" expand="onSRFWinPanelExpand">
+
+						<List items="{ path: 'environments>browsers' }" width="13rem" mode="SingleSelectMaster">
+							<items>
+								<CustomListItem class="srfBrowsersLItem">
+									<srf:Browser name="{environments>name}" class="srfBrowsers environment" 
+											press="onSRFBrowserSelected"/>
+								</CustomListItem>
+							</items>
+						</List>
+						
+					</Panel>
+				</items>
+			</FlexBox>
+			
+			<!-- winBrowsersPanel -->
+			<FlexBox items="{ path: 'environments>/srfEnv/Mac/osArr' }" id="srfmacPanel"
+				direction="Column">
+				<items>
+					<Panel expandable="true" expanded="{environments>expanded}" 
+						headerText="{environments>name} {environments>version}" 
+						backgroundDesign="Transparent" class="srfNoMargin"
+						width="16rem" expand="onSRFWinPanelExpand">
+
+						<List items="{ path: 'environments>browsers' }" width="13rem" mode="SingleSelectMaster">
+							<items>
+								<CustomListItem class="srfBrowsersLItem">
+									<srf:Browser name="{environments>name}" class="srfBrowsers environment" 
+											press="onSRFBrowserSelected"/>
+								</CustomListItem>
+							</items>
+						</List>
+						
+					</Panel>
+				</items>
+			</FlexBox>
+			
+			<!-- winBrowsersPanel -->
+			<FlexBox items="{ path: 'environments>/srfEnv/Linux/osArr' }" id="srfLinuxPanel"
+				direction="Column">
+				<items>
+					<Panel expandable="true" expanded="{environments>expanded}" 
+						headerText="{environments>name} {environments>version}" 
+						backgroundDesign="Transparent" class="srfNoMargin"
+						width="16rem" expand="onSRFWinPanelExpand">
+
+						<List items="{ path: 'environments>browsers' }" width="13rem" mode="SingleSelectMaster">
+							<items>
+								<CustomListItem class="srfBrowsersLItem">
+									<srf:Browser name="{environments>name}" class="srfBrowsers environment" 
+											press="onSRFBrowserSelected"/>
+								</CustomListItem>
+							</items>
+						</List>
+						
+					</Panel>
+				</items>
+			</FlexBox>
+			
+			<Panel	expandable="false" expanded="true" 
+					visible="{  parts: [{path: 'environments>/srfEnv/envBrowsersExists'}, {path: 'testDetails>/platform'}],
+								formatter: '.formatter.noAvailableBrowsersVisible' }"
+					backgroundDesign="Transparent" class="srfNoPadding srfNoMargin"
+					width="16rem" >
+
+					<TextArea value="{environments>/srfEnv/envType} {i18n>envAreCommingSoon}"  
+						width="100%"
+						height="20%"
+						enabled="false"
+						editable="false"
+						textAlign="Center"
+						required="false"
+						rows="2"
+						growing="true"/>
+					<Link text="{i18n>letUsKnow}" textAlign="Center" width="100%"
+						press="onLetUsKnow" />
+					
+			</Panel>
+		</VBox>
+		
+		<!-- mobilesPanel -->
+		<VBox id="mobilesPanel" visible="{  parts: [{path: 'environments>/srfEnv/envBrowsersExists'}, {path: 'testDetails>/platform'}],
+							formatter: '.formatter.mobilesVisible' }" class="srfSecond" width="16rem">
+			<items>
+				<Panel expandable="false" expanded="true" 
+					headerText="{i18n>capabilities}" 
+					backgroundDesign="Transparent">
+
+					<Button type="Accept" icon="{mcEnvironments>/selectedOSImage}" 
+						text="{i18n>btnAddRule}" 
+						press="onAddDevice" 
+						class="sapUiSmallMarginBottom addRuleImage srfDefaultBtnColor" 
+						width="13.5rem"/>
+				
+				</Panel>
+				<Panel expandable="false" expanded="true" 
+					headerText="{i18n>devices}" 
+					backgroundDesign="Transparent" >
+					
+					<SearchField showRefreshButton="true" showSearchButton="true"
+								 liveChange="onDeviceLiveSearch" 
+								 search="onDeviceSearch" width="13.5rem" />
+					
+					<List items="{ path: 'mcEnvironments>devices/specific' }" id="specDevices" width="13.5rem" 
+						mode="SingleSelectMaster"
+						itemPress="onSpecificDeviceSelectionChange" >
+						<items hAlign="Center">
+							<CustomListItem class="srfBrowsersLItem" type="Active">
+								<VBox>
+									<HBox> 
+										<Image src="{ parts: [{path: 'mcEnvironments>currentReservation'}, {path: 'mcEnvironments>connected'}],
+													  formatter: '.formatter.deviceAvailabilityImage'}"  
+												tooltip="{ parts: [{path: 'mcEnvironments>currentReservation'}, {path: 'mcEnvironments>connected'}],
+													  formatter: '.formatter.deviceAvailabilityTooltip'}"
+												width="14px"
+												class="deviceAvailability" />
+										<Text text="{mcEnvironments>nickName}" />	
+									</HBox>
+								
+									<Text text="OS: {mcEnvironments>platformVersion} | {mcEnvironments>deviceName}" 
+										wrapping="false"
+										tooltip="OS: {mcEnvironments>platformVersion} | {mcEnvironments>deviceName}"/>
+					
+								</VBox>
+							</CustomListItem>
+						</items>
+					</List>
+				</Panel>
+			</items>
+		</VBox>			
+	
+		<!-- appsPanel -->
+		<VBox id="appsPanel" visible="{mcEnvironments>/showApps}" class="srfSecond">
+			<items>
+				<Panel expandable="false" expanded="true" 
+					headerText="{i18n>mobileApps}" 
+					backgroundDesign="Transparent"
+					width="16rem">
+
+					<SearchField showRefreshButton="true" showSearchButton="true"
+								 liveChange="onAppLiveSearch" 
+								 search="onAppSearch" width="13.5rem" />
+					
+					<List items="{ path: 'mcEnvironments>/relevantApps',
+								   sorter: { path : 'mcEnvironments>name' }}" 
+								   id="appsList" width="13.5rem" 
+								   mode="SingleSelectMaster"
+								   itemPress="onAppSelectionChange" >
+						<items hAlign="Center">
+							<CustomListItem class="srfBrowsersLItem" type="Active" >
+								<HBox> 
+									<Image src="{ path: 'mcEnvironments>icon',
+												  formatter: '.formatter.base64Image'}" height="30px" class="srfBrowsers" />
+									
+									<VBox>
+										<Text text=" {mcEnvironments>name}" tooltip="{mcEnvironments>name}" wrapping="false"/>
+										<HBox class="appVersion">
+											<srf:OS image="{mcEnvironments>type}" />
+											<Text text=" v{mcEnvironments>appVersion}" tooltip="{mcEnvironments>appVersion}" 
+												wrapping="false" class="appVersion" />
+										</HBox>
+									</VBox>
+								</HBox>
+							</CustomListItem>
+						</items>
+					</List>
+				</Panel>
+			</items>
+		</VBox>
+	</VBox>
+	
+</core:FragmentDefinition>

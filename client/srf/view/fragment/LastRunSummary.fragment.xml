@@ -1,0 +1,11 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+	<core:Fragment fragmentName="srf.view.toolbar.RunsToolbar" type="XML"/>
+	<core:Fragment fragmentName="srf.view.fragment.runsummary.RunSummary" class="sapUiSizeCompact" type="XML"/>
+
+</core:FragmentDefinition>

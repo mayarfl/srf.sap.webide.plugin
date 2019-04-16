@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:srf="srf.control">
+
+	<HBox>
+		<!-- OS/Device/Applications selection -->
+		<core:Fragment fragmentName="srf.view.fragment.environments.AddEnv.AddEnvFirstPanel" visible="true" type="XML" width="100%"/>
+		
+		<core:Fragment fragmentName="srf.view.fragment.environments.AddEnv.AddEnvSecondPanel" visible="true" type="XML" width="100%"/>
+
+		<core:Fragment fragmentName="srf.view.fragment.environments.AddEnv.AddEnvThirdPanel" visible="true" type="XML" width="100%"/>
+
+	</HBox>
+
+</core:FragmentDefinition>

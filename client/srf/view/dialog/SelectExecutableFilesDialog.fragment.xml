@@ -1,0 +1,63 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>newTest_SelectExecutableTitle}" type="Message" verticalScrolling="false" class="sapUiPopupWithPadding" draggable="true">
+
+			<VBox>
+				<Title height="3rem" level="H3" text="{i18n>recordingApplication}"/>
+				<Label />
+				<HBox>
+					<Label text="{i18n>selectExecutableFileNameLabel}" width="4rem"/>
+					<Select id="srfExecutableFileSelectId" width="17rem" class="sapUiNoContentPadding sapUiSizeCompact"
+						tooltip="{i18n>newTest_SelectExecutableTooltip}" forceSelection="false" 
+						selectedKey="{testDetails>/sExecutableFilePath}" type="Default"
+						icon="sap-icon://drop-down-list" showSecondaryValues="true" 
+						items="{ path: 'testDetails>/executableFiles', sorter: { path: 'sFileName' } }"
+						change="onExecutableFileChanged" placeholder="{i18n>parameterSelectExecutableFilePlaceholder}">
+						<core:ListItem key="{testDetails>sFilePath}" text="{testDetails>sFileName}" additionalText="{testDetails>sFilePath}"/>
+					</Select>
+				</HBox>
+				<Label/>				
+				<HBox>
+					<Label text="{i18n>selectRunConfigLabel}" width="4rem"/>
+					<Select id="srfRunConfigurationId" width="17rem" class="sapUiNoContentPadding sapUiSizeCompact"
+						tooltip="{i18n>newTest_SelectRunConfigTooltip}" forceSelection="false" 
+						selectedKey="{testDetails>/runConfigurationName}" type="Default"
+						icon="sap-icon://drop-down-list" showSecondaryValues="true" 
+						items="{ path: 'testDetails>/runConfigurations', sorter: { path: '_metadata/displayName' } }"
+						change="onRunConfigurationChanged" 
+						placeholder="{i18n>parameterSelectExecutableFilePlaceholder}">
+						<core:ListItem key="{testDetails>_metadata/displayName}" text="{testDetails>_metadata/displayName}" additionalText="{testDetails>_metadata/runnerId}"/>
+					</Select>
+				</HBox>
+				<Label/>
+				<HBox>
+					<Label text="{i18n>appUrlLabel}" width="4rem"/>
+					<Input id="srfAppUrlInputId" type="sap.m.InputType.Url" text="{testDetails>/appUrl}" placeholder="{i18n>urlAboutBlank}"
+						tooltip="{testDetails>/appUrl}" width="17rem" liveChange="onAutUrlChanged" class="sapUiNoContentPadding"/>
+				</HBox>
+				<HBox>
+					<Label width="1rem"/>
+					<Label id="srfAppUrlErrorLabelId" height="0.7rem" text="" class="sapUiNoContentPadding srfError"/>
+				</HBox>
+		
+				<Label/>
+				<Title height="3rem" level="H3" text="{i18n>recordingEnvironment}"/>
+	
+				<HBox>
+					<Toolbar>
+					<Label width="18rem" height="1rem" design="Bold" id="srfScriptRecordingEnvironmentLabel"
+						tooltip="{i18n>recordingEnvironmentTooltip}: { path: 'testDetails>/scriptRecordingEnvironment', formatter: '.formatter.recordingEnvironment' }" 
+						text="{ path: 'testDetails>/scriptRecordingEnvironment', formatter: '.formatter.recordingEnvironment' }" 
+						class="sapUiNoContentPadding"
+					/>
+					<Link text="{i18n>changeLink}" tooltip="{i18n>changeLinkTooltip}" press="onChangeRecordEnvironment" class="srfLink"></Link>
+					</Toolbar>
+				</HBox>
+			</VBox>
+		<beginButton>
+			<Button text="{i18n>okButton}" class="srfDefaultBtnColor" press="onCloseSelectExecutableDialog" />
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancelButton}" class="srfBtnColor" press="onCancelSelectExecutableDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

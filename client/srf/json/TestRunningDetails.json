@@ -1,0 +1,174 @@
+[
+  {
+    "id": "539a1ce0-f21d-4296-9089-fab570ee32fc",
+    "name": "New Test - 13:49:11",
+    "start": "2016-07-14T10:50:06.788Z",
+    "durationMs": 89,
+    "status": "success",
+    "test": {
+      "id": "edcdb1d4-14fb-4e16-9729-10734e380db0",
+      "name": "New Test - 13:49:11",
+      "description": null,
+      "creationDate": "2016-07-14T10:49:11.950Z",
+      "modifiedDate": "2016-07-14T10:49:59.530Z",
+      "environments": [
+        {
+          "type": "web",
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "Firefox",
+            "version": "46"
+          },
+          "isAvailable": true
+        }
+      ],
+      "owner": {
+        "id": "100",
+        "name": "user1"
+      },
+      "type": "web",
+      "subType": "auto",
+      "additionalData": {
+        "execCount": 1
+      },
+      "scriptsCount": "2",
+      "scripts": [
+        {
+          "id": "f0199eb1-444e-46eb-a5e9-c4077b02110c",
+          "test": {
+            "id": "edcdb1d4-14fb-4e16-9729-10734e380db0"
+          },
+          "primaryResource": {
+            "id": "fbe4b682-9017-4d14-b629-0343c01e2169"
+          },
+          "resources": null,
+          "creationDate": "2016-07-14T10:49:59.533Z",
+          "modifiedDate": "2016-07-14T10:49:59.533Z",
+          "charterBlob": null,
+          "params": null
+        },
+        {
+          "id": "057adace-0050-4773-9af7-cf4e43b49a83",
+          "test": {
+            "id": "edcdb1d4-14fb-4e16-9729-10734e380db0"
+          },
+          "primaryResource": {
+            "id": "c452c40a-5b89-4239-ae28-bb0417839844"
+          },
+          "resources": null,
+          "creationDate": "2016-07-14T10:49:59.533Z",
+          "modifiedDate": "2016-07-14T10:49:59.533Z",
+          "charterBlob": null,
+          "params": null
+        }
+      ]
+    },
+    "tags": [
+      {
+        "id": "9a9c7bc8-c3c8-4ece-91cd-ce177fa34b78",
+        "name": "sap",
+        "group": "test"
+      }
+    ],
+    "user": {
+      "id": "100",
+      "name": "user1"
+    },
+    "additionalData": {
+      "scriptStatus": {
+        "errored": 2
+      },
+      "environmentCount": 1,
+      "scriptCount": 2
+    },
+    "scriptRuns": [
+      {
+        "id": "7b85b20c-d473-4184-99c7-a6c034de95cf",
+        "name": null,
+        "scriptInstance": {
+          "id": "f0199eb1-444e-46eb-a5e9-c4077b02110c"
+        },
+        "testRun": {
+          "id": "539a1ce0-f21d-4296-9089-fab570ee32fc"
+        },
+        "environment": {
+          "type": "web",
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "Firefox",
+            "version": "46"
+          },
+          "isAvailable": true
+        },
+        "start": "2016-07-14T10:50:06.817Z",
+        "durationMs": 70,
+        "status": "errored",
+        "assetInfo": {
+          "id": "fbe4b682-9017-4d14-b629-0343c01e2169",
+          "name": "Rotate Kitchen Camera",
+          "description": "resource description",
+          "type": "web",
+          "sdk": "uft",
+          "originalFileName": "scripts/rotateKitchenCamera.js",
+          "physicalFileName": "fbe4b682-9017-4d14-b629-0343c01e2169",
+          "runner": "mocha",
+          "owner": "Amir Wigelman",
+          "creationDate": "2016-04-10T13:39:58.247+03:00",
+          "modificationDate": "2016-04-10T13:39:58.247+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "3"
+        },
+        "scriptSteps": []
+      },
+      {
+        "id": "14b2da13-8bf8-48b5-a836-26913b6b9641",
+        "name": null,
+        "scriptInstance": {
+          "id": "057adace-0050-4773-9af7-cf4e43b49a83"
+        },
+        "testRun": {
+          "id": "539a1ce0-f21d-4296-9089-fab570ee32fc"
+        },
+        "environment": {
+          "type": "web",
+          "os": {
+            "name": "Windows",
+            "version": "7"
+          },
+          "browser": {
+            "name": "Firefox",
+            "version": "46"
+          },
+          "isAvailable": true
+        },
+        "start": "2016-07-14T10:50:06.819Z",
+        "durationMs": 69,
+        "status": "errored",
+        "assetInfo": {
+          "id": "c452c40a-5b89-4239-ae28-bb0417839844",
+          "name": "Make Coffee",
+          "description": "resource description",
+          "type": "mobile",
+          "sdk": "selenium",
+          "originalFileName": "scripts/makeCoffee.js",
+          "physicalFileName": "c452c40a-5b89-4239-ae28-bb0417839844",
+          "runner": "mocha",
+          "owner": "Amit Bezalel",
+          "creationDate": "2016-04-10T13:40:08.725+03:00",
+          "modificationDate": "2016-04-10T13:40:08.725+03:00",
+          "editable": true,
+          "data": null,
+          "testsCount": "3"
+        },
+        "scriptSteps": []
+      }
+    ]
+  }
+]

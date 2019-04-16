@@ -1,0 +1,54 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:srf="srf.control" >
+
+	<Table mode="None" id="applications" rememberSelections="false"
+		items="{mcEnv>applications}"
+		insert="false" 
+		width="auto" growing="true" 
+		growingThreshold="15" growingScrollToLoad="true" 
+		selectionChange="onSelectionChangeHandler"
+		updateFinished="onUpdateFinished">
+		
+		<columns>
+			<Column hAlign="Begin" wrapping="false" width="75px" >
+				<Text text="{i18n>OS}" tooltip="{i18n>OS}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>Name}" tooltip="{i18n>Name}" wrapping="false"/>
+			</Column>		
+			<Column hAlign="Begin" wrapping="false" width="55px" >
+				<Text text="{i18n>Upload}" tooltip="{i18n>Upload}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="80px" >
+				<Text text="{i18n>Instrumented}" tooltip="{i18n>Instrumented}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="2rem" >
+			</Column>
+		</columns>
+	
+		<items>
+			<ColumnListItem >
+				<cells>
+					<HBox class="appVersion"> 
+						<srf:OS image="{mcEnv>mobileApp/type}" />
+						<Text text=" v{mcEnv>mobileApp/appVersion}" tooltip="{mcEnv>mobileApp/appVersion}" 
+							wrapping="false" class="appVersion" />
+					</HBox>
+					<HBox>
+						<Image src="{	path: 'mcEnv>mobileApp/icon',
+										formatter: '.formatter.base64Image'}" height="20px" class="srfBrowsers" />
+						<Text text=" {mcEnv>mobileApp/name}" tooltip="{mcEnv>mobileApp/name}" wrapping="false"/>
+					</HBox>
+					<Text text="{mcEnv>mobileApp/counter}"/>
+					<Text text="{ path: 'mcEnv>mobileAppContext/usePackagedVersion',
+								  formatter: '.formatter.trueFalse'}"/>
+					<core:Icon src="sap-icon://delete" tooltip="{i18n>removeEnvTooltip}" press="onDeleteApp" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+</core:FragmentDefinition>

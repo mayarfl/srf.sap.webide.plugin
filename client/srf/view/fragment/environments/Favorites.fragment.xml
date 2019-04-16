@@ -1,0 +1,26 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:srf="srf.control" >
+
+	<VBox>
+		<Label text="{i18n>addExistingFavoriteLabel}" hAlign="Center" />
+		<HBox  hAlign="Center" >
+			<ComboBox id="envFavorites" tooltip="{i18n>envFavoritesTooltip}" placeholder="{i18n>envFavoritesPlaceholder}"
+				items="{ path: 'mcEnv>/favorites', sorter: { path : 'mcEnv>name' } }"
+				 >
+				<core:ListItem key="{mcEnv>uuid}" text="{mcEnv>name}"/>
+			</ComboBox>
+			
+			<Label />
+			
+			<Button text="{i18n>AddEnvironmentFavorite}" press="onLoadFavoriteEnv" />
+		</HBox>
+		<Label text="{i18n>OrLabel}" hAlign="Center" />
+		<!--Label text="{i18n>AddCustomOrExistingLabel}" hAlign="Center" /-->
+		<Link text="{i18n>AddCustomOrExistingLabel}" press="onAddLabEnvDlgOpen" hAlign="Center" />
+		<!--Button text="Edit" press="onEditEnv"  hAlign="Center" /-->
+	</VBox>
+
+</core:FragmentDefinition>

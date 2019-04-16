@@ -1,0 +1,79 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:srf="srf.control"
+	xmlns:commons="sap.ui.commons" >
+
+	<Panel 
+			backgroundDesign="Transparent" expandable="true" 
+			expanded="true" 
+			visible="{ path: 'mcEnvironments>/selecteddevices/length',
+						formatter: '.formatter.rulesSelectionVisible'	}"
+			headerText="{i18n>rules}" >
+
+		<Table mode="None" id="selecteddevices" rememberSelections="false"
+			items="{mcEnvironments>/selecteddevices}"
+			width="auto" growing="true" 
+			growingThreshold="15" growingScrollToLoad="true" 
+			selectionChange="onSelectionChangeHandler"
+			updateFinished="onUpdateFinished"  class="sapUiSizeCompact srfNoPadding">
+		
+			<columns>
+				<Column hAlign="Begin" width="auto" >
+					<Text text="{i18n>Version}" tooltip="{i18n>Version}" wrapping="false"/>
+				</Column>
+				<Column hAlign="Begin" width="auto" >
+					<Text text="{i18n>Model}" tooltip="{i18n>Model}" wrapping="false"/>
+				</Column>
+				<Column hAlign="Begin" width="140px" >
+					<Text text="{i18n>Lab}" tooltip="{i18n>Lab}" wrapping="false"/>
+				</Column>
+				<Column hAlign="End" width="2rem" >
+					
+				</Column>
+			</columns>
+		
+			<items>
+				<ColumnListItem >
+					<cells>
+						<HBox>
+							<srf:OS image="{mcEnvironments>platformName}" width="30px" class="ruleOSImage" />
+							<Select items="{ path: 'mcEnvironments>/rules', 
+											sorter: { path : 'mcEnvironments>rule', descending: false } }"
+								  selectedKey="{mcEnvironments>platformVersionOperator}"
+								  width="60px">
+								<core:Item key="{mcEnvironments>rule}" text="{mcEnvironments>rule}" />
+							</Select>
+							
+							<ComboBox items="{ path: 'mcEnvironments>availableVersions', 
+											 sorter: { path : 'mcEnvironments>platformVersion', descending: false } }" 
+									value="{mcEnvironments>platformVersion}" 
+									width="120px">
+								<core:Item key="{mcEnvironments>platformVersion}" text="{mcEnvironments>platformVersion}"/>
+							</ComboBox>
+						</HBox>
+							
+						<ComboBox items="{ path: 'mcEnvironments>availableDevices', 
+										 sorter: { path : 'mcEnvironments>deviceName', descending: false } }" 
+								value="{mcEnvironments>deviceName}" 
+								width="250px">
+							<core:Item key="{mcEnvironments>deviceName}" text="{mcEnvironments>deviceName}"/>
+						</ComboBox>
+						
+						<Select items="{ path: 'mcEnvironments>/labTypes', 
+											sorter: { path : 'mcEnvironments>type', descending: false } }"
+								selectionChange="onLabChanged"
+								selectedKey="{mcEnvironments>source}" >
+							<core:Item key="{mcEnvironments>type}" text="{ path: 'mcEnvironments>type',
+																			formatter: '.formatter.labType'}"/>
+						</Select>
+						<core:Icon src="sap-icon://delete" press="onDeleteSelectedDevice" 
+							visible="{testDetails>/runEnvironmentsSelection}"></core:Icon>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Panel>
+
+</core:FragmentDefinition>

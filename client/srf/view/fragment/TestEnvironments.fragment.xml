@@ -1,0 +1,13 @@
+<core:FragmentDefinition 
+        xmlns="sap.m" 
+        xmlns:l="sap.ui.layout" 
+        xmlns:core="sap.ui.core"
+        xmlns:form="sap.ui.layout.form"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns:srf="srf.control" >
+      
+    	<core:Fragment fragmentName="srf.view.fragment.environments.TestEnv.Environments" type="XML" />
+     	<!--<core:Fragment fragmentName="srf.view.fragment.environments.SRFEnvironments" visible="true" type="XML" width="100%"/>-->
+   	<!--<core:Fragment fragmentName="srf.view.fragment.environments.SRFMCEnvironments" visible="false" type="XML" width="100%"/>-->
+
+</core:FragmentDefinition>

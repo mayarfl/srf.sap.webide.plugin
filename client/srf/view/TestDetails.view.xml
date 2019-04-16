@@ -1,0 +1,39 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" 
+	xmlns:srf="srf.control"
+	controllerName="srf.controller.TestDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	
+	<Page title="{i18n>testTableTitle}" class="sapUiSizeCompact" showNavButton="true" navButtonPress="onNavBack" navButtonType="Back">
+		<headerContent>
+			<core:Fragment fragmentName="srf.view.fragment.PageHeader" type="XML"/>			
+		</headerContent>
+		<content>
+
+			<core:Fragment fragmentName="srf.view.toolbar.TestDetailsToolbar" type="XML"/>
+			<core:Fragment fragmentName="srf.view.fragment.TestDetails" type="XML"/>
+		
+			<IconTabBar id="srfRunsTabBar"
+				class="sapUiNoContentPadding srfTransparent" 
+				expandable="false">
+				<items class="srfTransparent">
+					<IconTabFilter  class="srfTransparent"
+						text="{i18n>StatusCaption}">
+						<core:Fragment fragmentName="srf.view.fragment.LastRunSummary" type="XML"/>
+					</IconTabFilter>
+					<IconTabFilter  class="srfTransparent"
+						text="{i18n>ScriptsCaption}">
+						<core:Fragment fragmentName="srf.view.fragment.TestScripts" type="XML"/>
+					</IconTabFilter>
+					<IconTabFilter  class="srfTransparent"
+						text="{i18n>EnvironmentsCaption}">
+							<core:Fragment fragmentName="srf.view.fragment.TestEnvironments" type="XML"/>
+					</IconTabFilter>
+					<!--<IconTabFilter  class="srfTransparent" visible="false"-->
+					<!--	text="{i18n>NewLabEnvironment}">-->
+					<!--		<core:Fragment fragmentName="srf.view.fragment.environments.SRFMCEnvironments" visible="false" type="XML" width="100%"/>-->
+					<!--</IconTabFilter>-->
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,12 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	
+	<core:Fragment fragmentName="srf.view.toolbar.ScriptRunToolbar" type="XML"/>
+	
+	<core:Fragment fragmentName="srf.view.fragment.runsummary.ScriptStepsTree" type="XML"/>
+	<core:Fragment fragmentName="srf.view.fragment.runsummary.ScriptSnapshots" type="XML"/>
+	<core:Fragment fragmentName="srf.view.fragment.runsummary.ScriptSnapshotsWithProp" type="XML"/>
+		
+</core:FragmentDefinition>

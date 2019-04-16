@@ -1,0 +1,24 @@
+{
+	"name": "srf.service.Pane",
+	"description": "Right Pane",
+	"extends": ["sap.watt.common.service.ui.Part"],
+	"methods": {
+		"navigateTo": {
+			"params": [{
+				"name": "oTarget",
+				"type": "object"
+			}],
+			"returns": "object"
+		},
+		"onSrfPreferencesChanged": {
+			"params": [{
+				"name": "oPreferences",
+				"type": "object"
+			}]	
+		},
+		"isLoggedIn": {
+			"params": [],
+			"returns": "bool"
+		}
+	}		
+}

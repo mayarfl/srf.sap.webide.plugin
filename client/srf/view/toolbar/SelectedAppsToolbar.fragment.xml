@@ -1,0 +1,46 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	>
+	<Toolbar design="Transparent" class="sapUiSmallMarginTopBottom srfTransparent sapUiSizeCompact">
+	
+		<Title text="{i18n>ADVANCED}" width="90px" />
+		
+		<ToolbarSpacer/>
+		<Title text="{i18n>uninstall}" width="65px" />
+		<Switch state="{mcEnvironments>/selectedruncontext/uninstall}" 
+			customTextOn=" " customTextOff=" " 
+			tooltip="{i18n>notAvailableInBeta}" enabled="true">
+			<layoutData>
+				<FlexItemData growFactor="0" />
+			</layoutData>
+		</Switch>
+			
+		<Title text="{i18n>install}" width="55px" />
+		<Switch state="{mcEnvironments>/selectedruncontext/install}" customTextOn=" " customTextOff=" " enabled="true">
+			<layoutData>
+				<FlexItemData growFactor="1" />
+			</layoutData>
+		</Switch>
+		
+		<Title text="{i18n>restart}" width="55px" />
+		<Switch state="{mcEnvironments>/selectedruncontext/restart}" customTextOn=" " customTextOff=" "  enabled="true">
+			<layoutData>
+				<FlexItemData growFactor="2" />
+			</layoutData>
+		</Switch>
+		
+		<Title text="{i18n>startTest}" width="70px" />
+		<Select tooltip="{i18n>systemAppsTooltip}"
+				items="{ path: 'mcEnvironments>/statrupapps' }" 
+				selectedKey="{ path: 'mcEnvironments>/selectedruncontext',
+							   formatter: '.formatter.lunchOnStartAppId'}" 
+				change="onStartupAppChanged"
+				width="120px">
+			<core:Item key="{mcEnvironments>id}" text="{mcEnvironments>name}"/>
+		</Select>
+
+		
+	</Toolbar>
+</core:FragmentDefinition>

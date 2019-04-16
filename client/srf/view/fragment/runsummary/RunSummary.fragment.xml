@@ -1,0 +1,40 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+   	<!--<l:HorizontalLayout  width="100%" >-->
+    <!--<l:VerticalLayout width="100%">-->
+	    <!--<Label text="Status:{testDetails>/testruns/0/status}"/>-->
+	    <Label width="1rem"
+	    	   visible="{testDetails>/lastRunVisible}"
+	    	/>
+	    <Label text="Start time: {	path: 'testDetails>/lastRun/start',
+	    							formatter: '.formatter.timestampToDateTime'}" 
+	    	   visible="{testDetails>/lastRunVisible}"
+	    	/>
+	    <Label width="3rem"
+	    	   visible="{testDetails>/lastRunVisible}"
+	    	/>
+	    <Label text="{	path: 'testDetails>/lastRun/durationMs',
+								type: 'new sap.ui.model.type.Float(
+									    	{	minFractionDigits:0,
+	                        					maxFractionDigits:3})',
+								formatter: '.formatter.duration'}" 
+				/>
+		
+    <!--</l:VerticalLayout>-->
+    
+     <!--<Panel width="auto" backgroundDesign="Transparent" >-->
+    	 <core:Fragment fragmentName="srf.view.fragment.runsummary.RunComparisonTable" type="XML"/>
+    <!--</Panel>-->
+    <Panel id="runErrors" width="auto" backgroundDesign="Transparent" visible="false" class="sapUiSizeCompact srfNoPadding">
+    	<core:Fragment fragmentName="srf.view.fragment.runsummary.RunErrorsTree" type="XML"/>
+    </Panel>
+    <Panel id="scriptRun" width="auto" backgroundDesign="Transparent" visible="false" class="sapUiSizeCompact srfNoPadding">
+    	<core:Fragment fragmentName="srf.view.fragment.runsummary.ScriptRun" type="XML"/>
+    </Panel>
+
+</core:FragmentDefinition>

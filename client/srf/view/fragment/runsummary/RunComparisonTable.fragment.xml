@@ -1,0 +1,48 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:srf="srf.control"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+<ScrollContainer width="auto" height="100%">
+	<Table id="comparisonTable"
+		columns="{testDetails>/lastRunTable/cols}" 
+		items = "{testDetails>/lastRunTable/items}" 
+        growing="true" growingThreshold="12" growingScrollToLoad="false"
+        class="srfNoPadding srfTblHighlightCol sapUiSizeCompact"
+        rememberSelections="false">
+
+		<columns>
+			<Column hAlign="{testDetails>hAlign}" width="{testDetails>width}">
+				<srf:RunEnvironmentDetails grey="true" 
+							os="{testDetails>os}" resolution="{testDetails>resolution}"
+							browser="{testDetails>browser}" styleClass="environment" />			
+			</Column>
+		</columns>
+		
+       <items>
+       		<ColumnListItem class="srfNoPadding">
+       			<cells>
+    				<!--<Text text="{testDetails>name}"/>	-->
+
+					<!--<Image src="{ path: 'testDetails>col1',-->
+					<!--			  formatter: '.formatter.scriptStatus'	}"-->
+					<!--		hAlign="Center"   />-->
+					<!--<Image src="{ path: 'testDetails>col2',-->
+					<!--			  formatter: '.formatter.scriptStatus'	}"-->
+					<!--		hAlign="Center"   />-->
+					<!--<Image src="{ path: 'testDetails>col3',-->
+					<!--			  formatter: '.formatter.scriptStatus'	}"-->
+					<!--		hAlign="Center"   />-->
+					<!--<Image src="{ path: ' testDetails>col4',-->
+					<!--			  formatter: '.formatter.scriptStatus'	}"-->
+					<!--		hAlign="Center"   />-->
+				</cells>
+       		</ColumnListItem>
+       </items>
+	</Table>
+	</ScrollContainer>
+
+</core:FragmentDefinition>

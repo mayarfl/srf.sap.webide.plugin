@@ -1,0 +1,18 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+
+	<Popover
+		showHeader="false"
+		contentWidth="500px"
+		contentHeight="auto"
+		placement="Bottom" >
+		
+		  <core:Fragment fragmentName="srf.view.fragment.notifications.NotificationsTabs" type="XML"/>
+	</Popover>
+		
+</core:FragmentDefinition>

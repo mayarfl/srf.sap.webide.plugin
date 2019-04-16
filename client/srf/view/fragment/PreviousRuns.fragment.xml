@@ -1,0 +1,60 @@
+<core:FragmentDefinition xmlns="sap.m" 
+	xmlns:c="sap.ui.commons"
+	xmlns:core="sap.ui.core"
+	xmlns:srf="srf.control" >
+	
+	<Toolbar design="Transparent" class="sapUiTinyMarginTopBottom srfTransparent">
+		<Title text="{i18n>runsList} ({testDetails>/_runs/totalItemsCount})"/>
+		<ToolbarSpacer/>
+		<SearchField id="searchField" tooltip="{i18n>testSearchTooltip}"  showRefreshButton="true" showSearchButton="true"
+			liveChange="onRunsLiveSearch" search="onRunsSearch" width="auto"></SearchField>
+	</Toolbar>
+	<Toolbar design="Transparent" class="sapUiTinyMarginTopBottom srfTransparent">
+		<ToolbarSpacer/>
+		<c:Paginator design="Transparent" currentPage="{testDetails>/_runs/pageNumber}" numberOfPages="{testDetails>/_runs/totalPages}" page="onRunsPageSelected"/>
+		<ToolbarSpacer/>
+	</Toolbar>
+	
+	<Table id="runsList"
+		class="sapUiSizeCompact srfTblHighlightCol"
+        items = "{ path: 'testDetails>/testruns',
+        		sorter: 'start'	}" 
+        mode="SingleSelectMaster" selectionChange="onRunSelected"
+        growingThreshold="{testDetails>/_runs/growingThreshold}" 
+        growing="true" growingScrollToLoad="false"
+        rememberSelections="false">
+
+		<columns>
+			<Column hAlign="Begin" width="auto" >
+				<Text text="Run Time | User"/>
+			</Column>
+			<Column hAlign="Begin" width="60px" >
+				<Text text="Status"/>
+			</Column>
+			<Column hAlign="End" width="40px" styleClass="test40" >
+				<Text text="Env"/>
+			</Column>
+			<Column hAlign="End" width="40px" styleClass="test40" >
+				<Text text="Scripts"/>
+			</Column>
+		</columns>
+		
+       <items>
+       		<ColumnListItem >
+       			<cells>
+       				<Text text="{ path: 'testDetails>start'}" />	
+
+					<Image src="{ path: 'testDetails>status',
+									  formatter: '.formatter.testStatus' }" 
+						  tooltip="{ path: 'additionalData',
+									   formatter: '.formatter.statusTooltip' }" />
+				
+					<srf:Environment envs="{testDetails>additionalData/environmentCount}" />
+					<srf:Script scripts="{testDetails>additionalData/scriptCount}" />
+	
+				</cells>
+       		</ColumnListItem>
+          
+       </items>
+	</Table>
+</core:FragmentDefinition>

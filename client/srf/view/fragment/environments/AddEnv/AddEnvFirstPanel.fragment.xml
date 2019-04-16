@@ -1,0 +1,64 @@
+<core:FragmentDefinition
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:srf="srf.control">
+
+	<!-- OS/Device/Applications selection -->
+	<VBox width="13rem">
+		<Panel expandable="false" expanded="true" headerText="{i18n>headerDesktop}"
+				backgroundDesign="Transparent" class="srfNoPadding srfNoMargin"
+				visible="{ path: 'testDetails>/platform',
+						   formatter: '.formatter.browsersSectionVisible'	}"   
+				>
+			<List width="10rem" mode="SingleSelectMaster">	
+				<items>
+					<CustomListItem class="srfOSLItem">
+						<srf:OS name="{i18n>typeWindows}" class="srfBrowsers environment" 
+										press="onSrfWindowsClick"/>
+					</CustomListItem>
+					<CustomListItem class="srfOSLItem">
+						<srf:OS name="{i18n>typeMAC}     " class="srfBrowsers environment" 
+										press="onSrfMACClick"/>
+					</CustomListItem>
+					<CustomListItem class="srfOSLItem">
+						<srf:OS name="{i18n>typeLinux}" class="srfBrowsers environment" 
+										press="onSrfLinuxClick"/>
+					</CustomListItem>
+				</items>
+			</List>
+		</Panel>
+		<Panel expandable="false" expanded="true" headerText="{i18n>headerMobileDevices}"
+				backgroundDesign="Transparent" class="srfNoPadding srfNoMargin"
+				visible="true"   
+				>
+			<List  width="10rem" mode="SingleSelectMaster">	
+				<items>
+					<CustomListItem class="srfOSLItem">
+						<srf:OS name="{i18n>typeAndroid}" class="srfBrowsers environment" 
+										press="onAndroidClick"/>
+					</CustomListItem>
+					<CustomListItem class="srfOSLItem">
+						<srf:OS name="{i18n>typeiOS}" class="srfBrowsers environment" 
+										press="oniOSClick"/>
+					</CustomListItem>
+				</items>
+			</List>
+		</Panel>
+		<Panel expandable="false" expanded="true" headerText="{i18n>headerApps}"
+				backgroundDesign="Transparent" class="srfNoPadding srfNoMargin"
+				visible="{ path: 'testDetails>/platform',
+						   formatter: '.formatter.mobileSectionVisible'	}"   
+				>
+			<List  width="10rem" mode="SingleSelectMaster">	
+				<items>
+					<CustomListItem class="srfOSLItem">
+						<srf:OS name="{i18n>typeAllApps}" image="applications" class="srfBrowsers environment" 
+										press="onAllAppsClick"/>
+					</CustomListItem>
+				</items>
+			</List>
+		</Panel>
+	</VBox>
+		
+</core:FragmentDefinition>

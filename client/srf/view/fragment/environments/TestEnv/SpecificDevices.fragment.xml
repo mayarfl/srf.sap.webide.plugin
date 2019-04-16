@@ -1,0 +1,57 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:srf="srf.control" >
+
+	<Panel 
+		backgroundDesign="Transparent" expandable="true" 
+		expanded="true" 
+		headerText="{i18n>specificDevices}" 
+		visible="{ path: 'mcEnv>/mobiles/specificdevices/length',
+						formatter: '.formatter.specificDevicesSelectionVisible'	}" >
+
+		<Table mode="None" id="specificdevices" rememberSelections="false"
+			items="{mcEnv>mobiles/specificdevices}"
+			insert="false" 
+			width="auto" growing="true" 
+			growingThreshold="15" growingScrollToLoad="true" >
+	
+			<columns>
+				<Column hAlign="Begin" wrapping="false" width="80px" >
+					<Text text="{i18n>OS}" tooltip="{i18n>OS}" wrapping="false"/>
+				</Column>
+				<Column hAlign="Begin" wrapping="false" width="auto" >
+					<Text text="{i18n>Model}" tooltip="{i18n>Model}" wrapping="false"/>
+				</Column>
+				<Column hAlign="Begin" wrapping="false" width="auto" >
+					<Text text="{i18n>Name}" tooltip="{i18n>Name}" wrapping="false"/>
+				</Column>
+				<!--<Column hAlign="Begin" wrapping="false" width="50px" >-->
+				<!--	<Text text="{i18n>Lab}" tooltip="{i18n>Lab}" wrapping="false"/>-->
+				<!--</Column>-->
+				<Column hAlign="Begin" wrapping="false" width="2rem" >
+				</Column>
+			</columns>
+		
+			<items>
+				<ColumnListItem >
+					<cells>
+		
+						<HBox> 
+							<srf:OS image="{mcEnv>platformName}" width="22px" />
+							<Text text="{mcEnv>platformVersion}" />
+						</HBox>
+						<Text text="{mcEnv>deviceName}" tooltip="{mcEnv>deviceName}" />
+						<VBox>
+							<Text text="{mcEnv>nickName}" tooltip="{mcEnv>udid}" wrapping="false"/>
+						</VBox>
+						<!--<Text text="{mcEnv>deviceType}" tooltip="{mcEnv>deviceType}" wrapping="false"/>-->
+						<core:Icon src="sap-icon://delete" tooltip="{i18n>removeEnvTooltip}" press="onDeleteSpecificDevice" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Panel>
+
+</core:FragmentDefinition>

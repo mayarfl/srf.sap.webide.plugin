@@ -1,0 +1,33 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	>
+	<Toolbar design="Transparent" class="sapUiSmallMarginTopBottom srfTransparent sapUiSizeCompact">
+	
+		<Title text="{i18n>environmentSelection}" width="15rem" />
+		
+		<ToolbarSpacer/>
+		<Title text="{i18n>loadFromFavorites}" width="10rem" />
+		<ComboBox id="envFavorites1" tooltip="{i18n>envFavoritesTooltip}" placeholder="{i18n>envFavoritesPlaceholder}"
+			items="{ path: 'mcAdd>/favorites', sorter: { path : 'mcAdd>name' } }"  >
+			<core:ListItem key="{mcAdd>uuid}" text="{mcAdd>name}"/>
+		</ComboBox>
+			
+		<Button text="{i18n>load}"  type="Accept"  
+			tooltip="{i18n>loadfromFavoritesTooltip}" press="onLoadFavorite" >
+			<layoutData>
+				<ToolbarLayoutData shrinkable="true" />
+				<OverflowToolbarLayoutData priority="Low" />
+			</layoutData>
+		</Button>
+		
+		<Button text="{i18n>saveAs}" tooltip="{i18n>saveAsFavoriteButtonTooltip}" press="onSaveAsFavorite" >
+			<layoutData>
+				<ToolbarLayoutData shrinkable="true" />
+				<OverflowToolbarLayoutData priority="Low" />
+			</layoutData>
+		</Button>
+		
+	</Toolbar>
+</core:FragmentDefinition>

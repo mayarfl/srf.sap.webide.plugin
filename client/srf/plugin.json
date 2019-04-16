@@ -1,0 +1,150 @@
+{
+	"name": "srf",
+	"description": "Micro Focus StormRunner Functional",
+	"i18n": "srf/i18n/i18n",
+	"requires": {
+		"services": [
+			"usernotification",
+			"log",
+			"command",
+			"commandGroup",
+			"perspective",
+			"content",
+			"resource",
+			"userpreference",
+			"selection",
+			"filesystem.documentProvider",
+			"document",
+			"run",
+			"setting.project",
+			"destination",
+			"intellisence",
+			"preferences"
+		]
+	},
+	"provides": {
+		"services": {
+			"rightpane": {
+				"implements": "srf.service.Pane",
+				"module": "srf/service/Pane"
+			}
+		},
+		"interfaces": {
+			"srf.service.Pane": "srf/service/Pane"
+		}
+	},
+	"configures": {
+		"services": {
+			"intellisence:libraries": [{
+				"id": "js",
+				"name": "HPIndex",
+				"version": "1.1.1",
+				"libIndexFile": "srf/index-metadata/index-metadata.zip",
+				"libTemplate": "srf/dummy-templates/dummy-templates.zip"
+			}],
+			"rightpane:styles": [{
+				"uri": "srf/css/style.css"
+			}],
+			"filesystem.documentProvider:dao": [{
+				"id": "srfFileDAO",
+				"service": {
+					"implements": "sap.watt.common.service.remote.FileDAO",
+					"module": "srf/service/HPEFileDAO"
+				}
+			}],
+			"command:commands": [{
+				"id": "srf.toggle",
+				"label": "{i18n>title_SRF}",
+				"service": {
+					"implements": "sap.watt.common.service.ide.AbstractUIPartToggler",
+					"module": "sap.watt.common.perspective/command/AbstractUIPartToggler",
+					"configuration": {
+						"id": "srf.toggle",
+						"service": "@rightpane",
+						"perspective": "development"
+					}
+				},
+				"icon": "sap-icon://watt/tmpl_robot"
+			}, {
+				"id": "srf.Notification",
+				"label": "",
+				"service": "srf/command/notification"
+			}, {
+				"id": "srf.NewTest",
+				"label": "{i18n>command_NewTest}",
+				"service": "srf/command/newtest"
+			}, {
+				"id": "srf.NewMobileTest",
+				"label": "{i18n>command_NewMobileTest}",
+				"service": "srf/command/newmobiletest"
+			}, {
+				"id": "srf.OpenSRF",
+				"label": "{i18n>command_OpenSRF}",
+				"service": "srf/command/open"
+			}],
+
+			"commandGroup:groups": [{
+				"id": "file.srf",
+				"label": "{i18n>commandgroup_HPE}"
+			}, {
+				"id": "hpe.srf",
+				"label": "{i18n>title_SRF}"
+			}],
+			"commandGroup:items": [{
+				"parent": "applicationRightSidebar",
+				"command": "srf.toggle",
+				"prio": "100",
+				"icon": ""
+			}, {
+				"parent": "file.new",
+				"type": "menu",
+				"group": "file.srf",
+				"prio": "40"
+			}, {
+				"parent": "file.srf",
+				"type": "action",
+				"command": "srf.NewTest",
+				"prio": "10"
+			}, {
+				"parent": "file.srf",
+				"type": "action",
+				"command": "srf.NewMobileTest",
+				"prio": "10"
+			}, {
+				"parent": "applicationMenu",
+				"type": "menu",
+				"group": "hpe.srf",
+				"prio": 75
+			}, {
+				"parent": "tools",
+				"type": "action",
+				"command": "srf.OpenSRF",
+				"group": "hpe.srf",
+				"prio": 100
+			}],
+			"perspective:views": [{
+				"id": "rightpane",
+				"service": "@rightpane",
+				"area": "right",
+				"visible": "false",
+				"cssclass": "explorer splitterContainer"
+			}],
+			"destination:usages": [{
+				"name": "SRF",
+				"path": ""
+			}],
+			"userpreference:plugins": [{
+				"id": "srfpreference",
+				"name": "{i18n>settings_Name}",
+				"title": "{i18n>settings_Title}",
+				"description": "",
+				"service": "srf/service/Settings"
+				
+			}]
+		}
+	},
+	"subscribes": {
+		"selection:changed": ["rightpane:onSelectionChanged"],
+		"document:saved": ["rightpane:onDocumentSaved"]
+	}
+}

@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Popover title="{i18n>testTableTitle}" class="sapUiSizeCompact sapUiPopupWithPadding" 
+		verticalScrolling="false" horizontalScrolling="false"
+		modal="false" contentWidth="auto" contentHeight="auto" placement="Bottom">
+		<VBox>
+			<FlexBox alignItems="Stretch" justifyContent="Start">
+				<items>
+					<Label text="{i18n>loginInfo}" design="Bold" class="sapUiSmallMarginEnd" />
+					<Label text="{srf>/srf_destination}"/>
+				</items>
+			</FlexBox>
+			<FlexBox alignItems="Stretch" justifyContent="Start">
+				<items>
+					<Label text="{i18n>loginUser}" design="Bold"/>
+					<VBox>
+						<FlexBox alignItems="Stretch" justifyContent="Start">
+							<items>
+								<Label/>
+							</items>
+						</FlexBox>
+						<HBox>
+							<VBox>
+								<Label text="{i18n>loginUserName}" design="Bold" class="sapUiSmallMarginEnd" />
+								<Label text="{i18n>loginUserEmail}" design="Bold" class="sapUiSmallMarginEnd" />
+							</VBox>
+							<VBox>
+								<Label text="{srf>/srf_user/userFirstName} {srf>/srf_user/userLastName}"/>
+								<Label text="{srf>/srf_user/userName}" />
+							</VBox>
+						</HBox>
+						<!--<FlexBox alignItems="Stretch" justifyContent="Start">-->
+						<!--	<items>-->
+								
+								
+						<!--	</items>-->
+						<!--</FlexBox>-->
+						<!--<FlexBox alignItems="Stretch" justifyContent="Start">-->
+						<!--	<items>-->
+								
+								
+						<!--	</items>-->
+						<!--</FlexBox>-->
+					</VBox>
+				</items>
+			</FlexBox>	
+			<Label/>	
+			<FlexBox height="5rem" alignItems="Start" justifyContent="Center">
+				<items>
+					<Button id="srfLogoutButtonID" text="{i18n>logoutButton}" press="onLogout" width="10rem" class="srfLoginBtnColor"/>
+				</items>
+			</FlexBox>
+		</VBox>
+	</Popover>
+</core:FragmentDefinition>

@@ -1,0 +1,55 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core" 
+	xmlns:form="sap.ui.layout.form"
+	xmlns:srf="srf.control" >
+
+	<Table mode="None" rememberSelections="false"
+		class="srfTblHighlightCol"
+		items="{testDetails>/environments}"
+		insert="false" 
+		width="auto" growing="true" 
+		growingThreshold="15" growingScrollToLoad="true" >
+
+		<!--<headerToolbar>-->
+		<!--	<Toolbar>-->
+		<!--		<Title id="tableHeader" text="{testsView>/testsTableTitle}"/>-->
+		<!--		<ToolbarSpacer/>-->
+		<!--		<SearchField id="searchField" tooltip="{i18n>testSearchTooltip}"  showRefreshButton="true" showSearchButton="true"-->
+		<!--			liveChange="onLiveSearch" search="onSearch" width="auto"></SearchField>-->
+		<!--	</Toolbar>-->
+		<!--</headerToolbar>-->
+		
+		<columns>
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>OS}" tooltip="{i18n>OS}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="auto" >
+				<Text text="{i18n>Browser}" tooltip="{i18n>Browser}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="5rem" >
+				<Text text="{i18n>Version}" tooltip="{i18n>Version}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="7rem" >
+				<Text text="{i18n>Resolution}" tooltip="{i18n>Resolution}" wrapping="false"/>
+			</Column>
+			<Column hAlign="Begin" wrapping="false" width="2rem" >
+			
+			</Column>
+		</columns>
+	
+		<items>
+			<ColumnListItem >
+				<cells>
+					<srf:OS os="{testDetails>os}"/>
+					<srf:Browser name="{testDetails>browser/name}"/>
+					<Text text="{testDetails>browser/version}"  wrapping="false"/>
+					<Text text="{testDetails>resolution}" wrapping="false"/>  
+					<core:Icon src="sap-icon://delete" tooltip="{i18n>removeEnvTooltip}" press="onDeleteSRFBrowser" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+
+</core:FragmentDefinition>

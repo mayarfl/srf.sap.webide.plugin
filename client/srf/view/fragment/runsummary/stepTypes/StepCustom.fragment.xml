@@ -1,0 +1,95 @@
+<core:FragmentDefinition 
+	xmlns="sap.m" 
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" >
+
+	<VBox visible="{testDetails>/btnShowStepProperties/pressed}" width="auto">
+
+		<Panel headerText="{i18n>stepDescription}"
+			expanded="true"
+			backgroundDesign="Transparent" class="sapUiSizeCompact sapUiContentPadding" >
+	 
+			<TextArea value="{testDetails>description}"  
+						width="100%"
+						enabled="false"
+						editable="false"
+						textAlign="Begin"
+						required="false"
+						wrapping="Soft"
+						rows="1"
+						growing="true"
+						growingMaxLines="4"
+						title="{testDetails>description}"
+						tooltip="{testDetails>description}"/>
+	
+		</Panel>	
+		
+		<Panel headerText="{i18n>stepExecutionTime}"
+			expanded="true"
+			backgroundDesign="Transparent" class="sapUiSizeCompact sapUiContentPadding" >
+	 
+			<TextArea value="{	path: 'testDetails>start',
+	    						formatter: '.formatter.timestampToDateTime'}"  
+						width="100%"
+						enabled="false"
+						editable="false"
+						textAlign="Begin"
+						required="false"
+						wrapping="Soft"
+						rows="1"
+						growing="true"
+						growingMaxLines="4"
+						title="{	path: 'testDetails>start',
+	    						formatter: '.formatter.timestampToDateTime'}"
+						tooltip="{	path: 'testDetails>start',
+	    						formatter: '.formatter.timestampToDateTime'}"/>
+	
+		</Panel>	
+		
+	
+		<Panel expandable="true" headerText="{i18n>stepCustomInfo}"
+			expanded="true"
+			backgroundDesign="Transparent" class="sapUiSizeCompact sapUiContentPadding" >
+	 
+			<TextArea value="{testDetails>details}"  
+						width="100%"
+						enabled="false"
+						editable="false"
+						textAlign="Begin"
+						required="false"
+						wrapping="Soft"
+						rows="1"
+						growing="true"
+						growingMaxLines="4"
+						title="{testDetails>details}"
+						tooltip="{testDetails>details}"/>
+	
+		</Panel>	
+		
+		<Panel expandable="true" headerText="{i18n>stepError}"
+			visible="{path: 'testDetails>error', formatter: '.formatter.isVisible'}"
+			expanded="{path: 'testDetails>error', formatter: '.formatter.isVisible'}"
+			backgroundDesign="Transparent" class="sapUiSizeCompact sapUiContentPadding" >
+	 		 <FlexBox width="100%">
+				<Image src="{ path: 'testDetails>error',
+									formatter: '.formatter.stepError'}" />
+				<TextArea value="{testDetails>error}"  
+						width="90%"
+						enabled="false"
+						editable="false"
+						textAlign="Begin"
+						required="false"
+						wrapping="Soft"
+						rows="1"
+						growing="true"
+						growingMaxLines="3"
+						title="{testDetails>error}"
+						tooltip="{testDetails>error}"/>
+			</FlexBox>
+		</Panel>	
+
+		
+	</VBox>
+
+
+</core:FragmentDefinition>

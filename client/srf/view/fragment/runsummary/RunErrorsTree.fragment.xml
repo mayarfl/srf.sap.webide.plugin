@@ -1,0 +1,52 @@
+<core:FragmentDefinition 
+	xmlns:m="sap.m" 
+	xmlns:core="sap.ui.core"
+    xmlns:srf="srf.control"
+    xmlns="sap.ui.table"   >
+
+        
+    <Table 
+    	class="sapUiSizeCompact sapUiSizeCompact"
+		width="auto" heigth="100px" visibleRowCount="4"
+		id="errorsList" 
+		rows="{ path: 'testDetails>/scriptRuns' }"
+		ariaLabelledBy="title" 
+
+        selectionMode="Single"
+        selectionBehavior="RowOnly">
+
+                    
+        <noData>
+			<m:Label 
+				design="Bold"
+				class="sapUiMediumMargin"
+				text="errors" />
+		</noData>
+		
+        <columns>	
+       		<Column hAlign="Begin" width="10rem"  mergeDuplicates="true">
+       			<m:Label text="{i18n>Script}"/>
+       			<template>
+					<m:Text text="{testDetails>assetInfo/name}" wrapping="false"
+					tooltip="{testDetails>assetInfo/name}" />
+				</template>	
+       		</Column>   		
+       		
+       		<Column hAlign="Begin" width="10rem" >
+       			<m:Label text="{i18n>Environment}"/>
+       			<template>
+					<m:Text text="{testDetails>environment/browser/name}{testDetails>environment/browser/version}>{testDetails>environment/os/name}{testDetails>environment/os/version}" wrapping="false" />
+				</template>	
+       		</Column>
+       		
+       		<Column hAlign="Begin" width="auto" >
+       			<m:Label text="{i18n>Error}"/>
+       			<template>
+					<m:Text text="{testDetails>errors/0/message}" wrapping="false" tooltip="{testDetails>errors/0/message}" />
+				</template>	
+       		</Column>
+       		
+		</columns>
+	</Table>
+	<!--</l:VerticalLayout>-->
+</core:FragmentDefinition>

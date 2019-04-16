@@ -1,0 +1,8 @@
+<mvc:View
+	xmlns:srf="srf.control"
+	xmlns:mvc="sap.ui.core.mvc" 
+	>
+	<!-- dummy root view implemented as a workaround for doplication of root view and its controller -->
+	<srf:App id="srfDummyRoot" class="srfAppGlobalTrasparent">
+	</srf:App>
+</mvc:View>

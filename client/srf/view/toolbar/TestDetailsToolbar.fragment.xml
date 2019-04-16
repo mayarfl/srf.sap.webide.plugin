@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+	<OverflowToolbar design="Transparent" class="sapUiSmallMarginTop srfTransparent sapUiSizeCompact"  enabled="{srf>/srf_loggedIn}">
+		<Image src="{ path: 'testDetails>/platform', formatter: '.formatter.testPlatform' }" width="1.25rem" alt="{testDetails>/platform}"
+			tooltip="{testDetails>/platform}"/>
+		<Input value="{testDetails>/newTestName}" required="true" tooltip="{testDetails>/newTestName}" width="20rem" 
+			maxLength="100" change="onTestNameChange"
+			class="srfTestName srfTestNameHover" 
+			placeholder="{i18n>testNamePlaceHolder}">
+			<layoutData>
+				<ToolbarLayoutData shrinkable="true"/>
+				<OverflowToolbarLayoutData priority="High"/>
+			</layoutData>
+		</Input>
+		<ToolbarSpacer>
+			<layoutData>
+				<ToolbarLayoutData shrinkable="true"/>
+				<OverflowToolbarLayoutData priority="Low"/>
+			</layoutData>
+		</ToolbarSpacer>
+		<Button icon="sap-icon://refresh" class="srfBtnColor" tooltip="{i18n>testRefresh}" press="onRefresh">
+			<layoutData>
+				<ToolbarLayoutData shrinkable="true"/>
+				<OverflowToolbarLayoutData priority="NeverOverflow"/>
+			</layoutData>
+		</Button>
+		<Button icon="sap-icon://delete"  class="srfBtnColor" tooltip="{i18n>deleteTestTooltip} {testDetails>/newTestName}" press="onDeleteTest">
+			<layoutData>
+				<ToolbarLayoutData shrinkable="true"/>
+				<OverflowToolbarLayoutData priority="Low"/>
+			</layoutData>
+		</Button>
+		<Button icon="sap-icon://media-play" class="srfDefaultBtnColor"
+			 press="onRun" enabled="{ path: 'testDetails>/test', formatter: '.formatter.btnRunEnabled'}" tooltip="{i18n>runTestTooltip}">
+			<layoutData>
+				<ToolbarLayoutData shrinkable="true"/>
+				<OverflowToolbarLayoutData priority="NeverOverflow"/>
+			</layoutData>
+		</Button>
+	</OverflowToolbar>
+	<HBox visible="{testDetails>/newTestNameErrorShow}">
+		<Label width="2rem" visible="{testDetails>/newTestNameErrorShow}"/>
+		<Label text="{testDetails>/newTestNameError}" visible="{testDetails>/newTestNameErrorShow}"
+			class="sapUiNoContentPadding srfError"/>
+	</HBox>
+</core:FragmentDefinition>

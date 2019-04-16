@@ -1,0 +1,63 @@
+<core:FragmentDefinition 
+	xmlns:m="sap.m" 
+	xmlns:core="sap.ui.core"
+    xmlns:srf="srf.control"
+    xmlns="sap.ui.table"   >
+
+        
+    <TreeTable 
+    	class="sapUiSizeCompact"
+		width="auto" heigth="100px" visibleRowCount="4"
+		id="stepsList" 
+		rows="{ path: 'testDetails>/scriptSteps', parameters: {arrayNames:['steps']} }"
+		ariaLabelledBy="title" 
+		columnHeaderVisible="false"
+        rowSelectionChange="onStepSelected" 
+        selectionMode="Single"
+        selectionBehavior="RowOnly">
+
+                    
+        <noData>
+			<m:Label 
+				design="Bold"
+				class="sapUiMediumMargin"
+				text="{i18n>presentRunPermutationNotification}" />
+		</noData>
+		
+        <columns>	
+          
+       		<Column hAlign="Begin" width="auto" >
+       			<m:Label text="{i18n>Description}"/>
+       			<template>
+					<m:Text text="{testDetails>description}" wrapping="false" tooltip="{testDetails>description}" />
+				</template>	
+       		</Column>
+       		
+       		<Column hAlign="End" width="80px">
+				<m:Label text="{i18n>Duration}" />
+       			<template>
+					<m:Text text="{ path: 'testDetails>durationMs',
+								type: 'new sap.ui.model.type.Float(
+									    	{	minFractionDigits:0,
+	                        					maxFractionDigits:3})',
+								formatter: '.formatter.stepDuration'}"  />
+				</template>	
+       		</Column>
+       		
+       		<Column hAlign="Begin" width="40px" >
+ 				<m:Label text="{i18n>Status}" />
+      			<template>
+					<m:Image src="{ path: 'testDetails>status',
+									formatter: '.formatter.stepStatus'}" 
+							 tooltip="{testDetails>error}" 
+							 class="scriptrunning" />	
+							 <!--{ path: 'testDetails>status',
+									formatter: '.formatter.scriptStatusClass'}-->
+							 <!--  testDetails>statusClass -->
+				</template>	
+       		</Column>	
+       		
+		</columns>
+	</TreeTable>
+	<!--</l:VerticalLayout>-->
+</core:FragmentDefinition>

@@ -1,0 +1,16 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:srf="srf.control"
+	controllerName="srf.controller.settings.Settings" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<l:VerticalLayout class="sapUiContentPadding">
+		<l:content>
+			<VBox>
+				<core:Fragment fragmentName="srf.view.settings.SrfDestinationSettings" type="XML"/>
+				<Label text="{i18n>settings_noTenantID}" visible="{srfSettings>/tenantError}" 
+					class="sapUiNoContentPadding srfError" />
+				<Label></Label>
+				<Image src="{ path: 'srfSettings>/_sSettingsImageFileName', formatter: '.formatter.getSettingsImage' }" />
+			</VBox>
+		</l:content>
+		
+	</l:VerticalLayout>
+</mvc:View>
